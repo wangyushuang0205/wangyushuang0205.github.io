@@ -1,11 +1,11 @@
 <template>
   <div class="header">
     <div class="header-box">
-      <div class="header-left animated bounceInLeft">
+      <!-- <div class="header-left animated bounceInLeft">
         <img v-if="company.logo" :src="company.logo" @click="$router.push({name:'pc_index'})">
         <span v-else v-text="company.name" class="company-name"></span>
-      </div>
-      <div class="header-right animated bounceInRight">
+      </div> -->
+      <div class="header-right animated bounceInLeft">
         <ul>
           <li v-for="(item,index) in menus" :key="index" @click="push(item,1,index)" :class="{'active':$route.name == item.target}"  v-if="item.isShow" class="first">
             {{item.label}}
