@@ -11,8 +11,9 @@ const pc_product      = () => import('@/components/index/pc/pc_product.vue');
 const pc_about        = () => import('@/components/index/pc/pc_about.vue');
 const pc_contacts     = () => import('@/components/index/pc/pc_contacts.vue');
 const pc_mobile       = () => import('@/components/index/pc/pc_mobile.vue');
-const pc_tryout       = () => import('@/components/index/pc/pc_tryout.vue');
+const pc_contact      = () => import('@/components/index/pc/pc_contact.vue');
 const pc_introduce    = () => import('@/components/index/pc/pc_introduce.vue');
+const pc_Imageinfo    = () => import('@/components/index/pc/pc_Imageinfo.vue');
 
 const mp_index        = () => import('@/components/index/mp/mp_index.vue');
 const mp_product      = () => import('@/components/index/mp/mp_product.vue');
@@ -70,9 +71,9 @@ export default new Router({
           }
         },
         {
-          path: '/pc_tryout',
-          component: pc_tryout,
-          name: 'pc_tryout',
+          path: '/pc_contact',
+          component: pc_contact,
+          name: 'pc_contact',
           meta:{
             type: 'pc',
           }
@@ -81,6 +82,14 @@ export default new Router({
           path: '/pc_introduce',
           component: pc_introduce,
           name: 'pc_introduce',
+          meta:{
+            type: 'pc',
+          }
+        },
+        {
+          path: '/pc_Imageinfo',
+          component: pc_Imageinfo,
+          name: 'pc_Imageinfo',
           meta:{
             type: 'pc',
           }

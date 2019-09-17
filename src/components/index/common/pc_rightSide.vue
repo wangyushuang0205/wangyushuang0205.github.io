@@ -16,6 +16,7 @@ export default {
   },
   methods: {
     push(target) {
+      console.log(target);
       if (target) {
         this.$router.push({ name: target });
       }
@@ -38,7 +39,7 @@ export default {
   height: 150px;
   position: fixed;
   top: 50%;
-  right: 0;
+  right: 18px;
   z-index: 9999;
   border-radius: 5px;
 
@@ -55,7 +56,6 @@ export default {
       text-align: right;
       padding-right: 20%;
       background-color: transparent;
-
       i {
         margin-right: 10px;
       }

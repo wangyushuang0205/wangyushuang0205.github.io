@@ -1,7 +1,8 @@
 export default {
   // 公司基本信息
+  title: '回回·摄影工作室',
   name:'I JUST WANNER RUN',
-  introduce:'无论您是普通互联网用户，还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。想创建一个简单的单页式站点，还是一个专业的公司网站，亦或是一个别具一格的博客？起飞页可以满足您的所有需求。您只需在模板上进行少量修改，即可完成自己的网站。起飞页的核心竞争力来自于它集流线式布局方案与可视化内容编辑于一体，支持打字传图、自由拖拽，不需要专业编写代码，也没有其他建站工具的层叠式烦恼，您可以随心所欲创建区块、添加组件',
+  introduce:'青岛回回·摄影工作室成立于2019年9月16日，回回服务小众，品质高端，主营业务为高端个人写真、儿童私人摄影、商业摄影、毕业摄影等。',
   contact:'王玉双',
   mobile:'15063918700',
   address:'山东省青岛市黄岛区灵山卫街道办事处东岳东路572号',
@@ -18,15 +19,60 @@ export default {
       //   introduce: '<span style="color:#f9f9f9">第一张图片上的文字</span>',
       // }
     },
-    // {
-    //   index:1,
-    //   url  : require('@/assets/img/banner/banner2.jpg'),
-    //   children : {
-    //     url      : require('@/assets/img/index/0.png'),
-    //     title    : '第二张图片上的标题',
-    //     introduce: '第二张图片上的文字',
-    //   }
-    // },
+    {
+      index:1,
+      url  : require('@/assets/img/banner/banner2.jpg'),
+      // children : {
+      //   url      : require('@/assets/img/banner/banner3.jpg'),
+      //   title    : '第二张图片上的标题',
+      //   introduce: '第二张图片上的文字',
+      // }
+    },
+    {
+      index:2,
+      url  : require('@/assets/img/banner/banner3.jpg'),
+      // children : {
+      //   url      : require('@/assets/img/banner/banner5.jpg'),
+      //   title    : '第二张图片上的标题',
+      //   introduce: '第二张图片上的文字',
+      // }
+    },
+    {
+      index:3,
+      url  : require('@/assets/img/banner/banner4.jpg'),
+      // children : {
+      //   url      : require('@/assets/img/banner/banner7.jpg'),
+      //   title    : '第二张图片上的标题',
+      //   introduce: '第二张图片上的文字',
+      // }
+    },
+    {
+      index:4,
+      url  : require('@/assets/img/banner/banner5.jpg'),
+      // children : {
+      //   url      : require('@/assets/img/banner/banner7.jpg'),
+      //   title    : '第二张图片上的标题',
+      //   introduce: '第二张图片上的文字',
+      // }
+    },
+    {
+      index:5,
+      url  : require('@/assets/img/banner/banner6.jpg'),
+      // children : {
+      //   url      : require('@/assets/img/banner/banner7.jpg'),
+      //   title    : '第二张图片上的标题',
+      //   introduce: '第二张图片上的文字',
+      // }
+    },
+    {
+      index:6,
+      url  : require('@/assets/img/banner/banner7.jpg'),
+      // children : {
+      //   url      : require('@/assets/img/banner/banner7.jpg'),
+      //   title    : '第二张图片上的标题',
+      //   introduce: '第二张图片上的文字',
+      // }
+    },
   ],
   promise:[
     { index : 1, icon : 'el-icon-star-off', label : '独特审美角度' ,content: '名牌正货，型号齐全，品牌多样。知名外墙保温、塑料、化工、行业产品、维修及方案解决、建材配件、建材为主的高新技术企业。'},

@@ -10,7 +10,7 @@
     </div>
     <hr>
     <div class="footer-bottom">
-      <span>{{company.name}}</span>
+      <span>{{company.title}}</span>
       <span>{{base.copyright}}</span>
     </div>
   </div>
@@ -45,9 +45,9 @@ export default {
   color: gray;
 
   .footer-top {
-    width: 70%;
-    margin: auto;
-    height: 200px;
+    width: 80%;
+    margin: 0 auto;
+    height: 180px;
     display: inline-flex;
     padding: 50px 0;
     .footer-top-left{
@@ -67,7 +67,7 @@ export default {
   }
 
   .footer-bottom {
-    width:70%;
+    width: 80%;
     margin: 0 auto;
     display: inline-flex;
     justify-content: space-between;

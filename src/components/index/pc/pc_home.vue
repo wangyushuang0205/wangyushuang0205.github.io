@@ -3,7 +3,7 @@
     <pcHeader ref="pcHeader" class="pc-header"></pcHeader>
     <div class="con" id="con">
       <el-backtop target=".con" :visibility-height="300" :bottom="100">
-        <div class="up-container"><i class="el-icon-top"></i></div>
+        <div class="up-container"><i class="el-icon-arrow-up"></i></div>
       </el-backtop>
       <div class="container">
         <router-view ref="child">
@@ -62,7 +62,7 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100%;
-  min-width: 1028px;
+  min-width: 950px;
 
   .pc-header {
     height: 100px;
@@ -77,15 +77,16 @@ export default {
     .up-container {
       height: 100%;
       width: 100%;
-      border-radius: 50%;
+      border-radius: 10%;
       background-color: #f2f5f6;
       box-shadow: 0 0 6px rgba(0, 0, 0, .12);
       text-align: center;
       line-height: 40px;
       color: #1989fa;
 
-      .el-icon-top {
+      .el-icon-arrow-up {
         font-size: 20px;
+        font-weight: bolder;
         position: relative;
         animation: move 0.8s infinite;
 

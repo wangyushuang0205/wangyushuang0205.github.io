@@ -1,11 +1,11 @@
 <template>
   <div class="header">
     <div class="header-box">
-      <!-- <div class="header-left animated bounceInLeft">
+      <div class="header-left animated bounceInLeft">
         <img v-if="company.logo" :src="company.logo" @click="$router.push({name:'pc_index'})">
-        <span v-else v-text="company.name" class="company-name"></span>
-      </div> -->
-      <div class="header-right animated bounceInLeft">
+        <span v-else v-text="company.title" class="company-name"></span>
+      </div>
+      <div class="header-right animated bounceInRight">
         <ul>
           <li v-for="(item,index) in menus" :key="index" @click="push(item,1,index)" :class="{'active':$route.name == item.target}"  v-if="item.isShow" class="first">
             {{item.label}}
@@ -78,7 +78,8 @@ export default {
   background-color: #2b2b2b;
 
   .header-box {
-    width: 70%;
+    width: 80%;
+    margin: 0 auto;
     height: 100%;
     display: inline-flex;
     justify-content: space-between;
@@ -86,11 +87,17 @@ export default {
 
     .header-left {
       span {
-        font-size: 35px;
-        letter-spacing: 10px;
+        font-size: 32px;
+        letter-spacing: 6px;
         display: block;
-        padding: 10px 0;
-        color: #009fe9;
+        padding: 8px 0;
+        color: #fff;
+        background: linear-gradient(to bottom, #fff 0%, #333 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        text-fill-color: transparent;
+        -webkit-text-fill-color: transparent;
+        // color: #009fe9;
       }
     }
 

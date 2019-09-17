@@ -1,10 +1,29 @@
 <template>
   <div class="pc-about">
     <pcBanner :class="base.pc.banner.style?'pc-banner-full':'pc-banner'"></pcBanner>
-    <pcHeadline main="关于我们" subtitle="ABOUT US"></pcHeadline>
-    <div class="intro">
-      <p class="company">{{company.title}}</p>
-      <p class="introduce">{{company.introduce}}</p>
+    <pcHeadline main="联系我们" subtitle="CONTACT US"></pcHeadline>
+    <div class="pc-contacts">
+      <div class="contacts">
+        <div class="contacts_box">
+          <div class="contacts_left">
+            <p v-if="company.contact"><i class="el-icon-user"></i><span>{{company.contact}}</span></p>
+            <p v-if="company.mobile"><i class="el-icon-phone-outline"></i><span>{{company.mobile}}</span></p>
+            <!-- <p v-if="company.address"><i class="el-icon-location-information"></i><span>{{company.address}}</span></p> -->
+            <p v-if="company.email"><i class="el-icon-message"></i><span>{{company.email}}</span></p>
+            <p v-if="company.address"><i class="el-icon-position"></i><span>{{company.address}}</span></p>
+          </div>
+          <div class="contacts_right">
+<!--             <div v-if="company.pc_code">
+              <img :src="company.pc_code" alt="">
+              <p>菊房易卖</p>
+            </div> -->
+            <div v-if="company.wx_code">
+              <img :src="company.wx_code" alt="">
+              <p>微信客服</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -25,14 +44,14 @@ export default {
 
   },
   mounted() {
-    let tag1 = $(".contacts_left").children();
-    if (!tag1.length) {
-      $("div").remove(".contacts_left");
-    }
-    let tag2 = $(".contacts_right").children();
-    if (!tag2.length) {
-      $("div").remove(".contacts_right");
-    }
+    // let tag1 = $(".contacts_left").children();
+    // if (!tag1.length) {
+    //   $("div").remove(".contacts_left");
+    // }
+    // let tag2 = $(".contacts_right").children();
+    // if (!tag2.length) {
+    //   $("div").remove(".contacts_right");
+    // }
   }
 }
 
