@@ -61,6 +61,14 @@ export default {
     },
   },
   mounted() {
+    let arr = [1,1,2,3,4,5,5,6]
+    let arr2 = arr.reduce(function(ar,cur) {
+      if(!ar.includes(cur)) {
+        ar.push(cur)
+      }
+      return ar
+    },[])
+    console.log(arr2);
     // //获取元素
     // var oDownPage = document.getElementById('background');
     // var oTopPage  = document.getElementById('top-content');
@@ -92,7 +100,7 @@ export default {
             $('.top-content-three').children().eq(2).addClass('animated fadeInUp')
           }, 400);
         }
-        if (top > 800) {
+        if (top > 900) {
           $('.top-content-four-up').addClass('animated fadeInUp')
         }
       },true);
@@ -103,6 +111,7 @@ export default {
 </script>
 <style lang="less" scoped>
 .index {
+  width: 100%;
   .background{
     width: 100%;
     height: 100%;
@@ -169,6 +178,7 @@ export default {
           }
         }
         .el-button{
+          cursor: pointer;
           margin: 20px auto;
           font-size: 17px;
           text-shadow: 0 0 3px black;
@@ -216,6 +226,7 @@ export default {
           }
         }
         .el-button{
+          cursor: pointer;
           margin: 20px auto;
           font-size: 17px;
           color: #fff;

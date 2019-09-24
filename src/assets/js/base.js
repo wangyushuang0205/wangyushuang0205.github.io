@@ -10,6 +10,7 @@ export default {
         {isShow: true,label:'回回作品',hasChild:false,target:'pc_product',type:'product'},
         {isShow: true,label:'关于我们',hasChild:false,target:'pc_about',type:'about'},
         {isShow: true,label:'联系我们',hasChild:false,target:'pc_contact',type:'contact'},
+        {isShow: true,label:'登录',hasChild:false,target:'pc_contact',type:'contact'},
       ]
     },
     banner:{

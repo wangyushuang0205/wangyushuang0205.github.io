@@ -1,6 +1,6 @@
 <template>
   <div class="product_about">
-    <pcHeadline main="产品相关" subtitle="ABOUT PRODUCT"></pcHeadline>
+    <pcHeadline main="回回作品" subtitle="ABOUT PRODUCT"></pcHeadline>
     <div class="list">
       <div class="left_menu">
         <el-button type="text" class="el-icon-s-unfold" @click="isShow = !isShow"> 目 录</el-button>
@@ -56,10 +56,9 @@ export default {
           index  : 0,//第一条放公司简介
           label  : '关于我们',
           banner : [
-            {index:0,url:require('@/assets/img/index/0.png')},
-            {index:1,url:"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1568094110,1386442470&fm=26&gp=0.jpg"},
+            {index:0,url:require('@/assets/img/banner/banner1.jpg')},
           ],
-          content: '<p><strong>公司简介:</strong></p><p>青岛菊房易卖网络科技有限公司前身成立于2008年，一家专业从事房地产销售租赁的自营连锁店，经过十年的不懈努力，收集了国内近百家房地产中介公司信息化建设需求，吸取了各地的房地产行业管理经验和思路后，形成了现在的一手房代理、房屋中介服务、行业管理软件开发、网站建设、网络系统集成、技术咨询、技术服务、楼宇智能化工程的现代高科技企业。</p>',
+          content: '<p><strong>公司简介:</strong></p><p>青岛回回·摄影工作室成立于2019年9月16日，回回服务小众，品质高端，主营业务为高端个人写真、儿童私人摄影、商业摄影、毕业摄影等。</p>',
         },
         {
           index  : 1,

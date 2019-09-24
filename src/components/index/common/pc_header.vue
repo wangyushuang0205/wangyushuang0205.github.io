@@ -36,20 +36,6 @@ export default {
       }
     },
     navInit() {
-      $(document).ready(function() {
-        if (document.body.clientWidth >= 1078) {
-          $(".third").css({ "right": "0", "left": "200px" });
-        } else {
-          $(".third").css({ "right": "200px", "left": "" });
-        }
-      })
-      window.onresize = () => {
-        if (document.body.clientWidth >= 1078) {
-          $(".third").css({ "right": "0", "left": "200px" });
-        } else {
-          $(".third").css({ "right": "200px", "left": "" });
-        }
-      };
     },
   },
   mounted() {
@@ -129,116 +115,6 @@ export default {
 
           &:hover {
             color: #009fe9;
-          }
-
-
-          .second {
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            left: -20px;
-            top: 100%;
-            z-index: 999;
-            background-color: white;
-            height: auto;
-            display: none;
-            width: 200px;
-            font-size: 14px;
-
-            span {
-              position: absolute;
-              width: 0px;
-              height: 0px;
-
-              &:nth-child(1) {
-                border-width: 15px;
-                border-style: solid;
-                border-color: transparent transparent #ccc transparent;
-                top: -30px;
-                left: 40px;
-              }
-
-              &:nth-child(2) {
-                border-width: 14px;
-                border-style: solid;
-                border-color: transparent transparent white transparent;
-                width: 0px;
-                height: 0px;
-                top: -28px;
-                left: 41px;
-              }
-
-            }
-
-            li {
-              position: relative;
-              line-height: 45px;
-              width: 170px;
-              display: flex;
-              flex-flow: row nowrap;
-              justify-content: space-between;
-              align-items: center;
-              padding: 0 15px;
-              color: black;
-              line-height: 50px;
-
-              &:hover {
-                background-color: orange;
-                color: white;
-              }
-
-              .third {
-                border-radius: 5px;
-                border: 1px solid #ccc;
-                background-color: white;
-                position: absolute;
-                display: flex;
-                flex-direction: column;
-                height: auto;
-                top: 0;
-                display: none;
-                width: 220px;
-                overflow: hidden;
-                font-size: 14px;
-
-                div {
-                  width: 235px;
-                  overflow-y: scroll;
-                  height: 300px;
-                  overflow-x: hidden;
-                }
-
-                li {
-                  width: 190px;
-                  line-height: 45px;
-                  display: inline-flex;
-                  justify-content: flex-start;
-                  padding: 0 15px;
-                  color: black;
-                  line-height: 50px;
-                  white-space: nowrap;
-                  text-overflow: ellipsis;
-                  overflow: hidden;
-
-                  i {
-                    margin-right: 15px;
-                    display: none;
-                  }
-
-                  &:hover {
-                    background-color: orange;
-                    color: white;
-                    justify-content: center;
-
-                    i {
-                      display: block;
-                    }
-                  }
-                }
-              }
-            }
           }
         }
       }

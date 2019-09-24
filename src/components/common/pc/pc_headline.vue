@@ -45,6 +45,8 @@ export default {
     font-size: 35px;
     letter-spacing: 12px;
     text-align: center;
+    text-shadow: 2px 2px 3px #009fe9;
+    color: #fff;
   }
   .bottom{
     font-size: 20px;
@@ -73,6 +75,10 @@ export default {
       background-color: #ccc;
       transform: rotate(45deg);
     }
+  }
+  /deep/ .el-divider__text{
+    padding: 0 8px;
+    border-radius: 15%;
   }
 }
 

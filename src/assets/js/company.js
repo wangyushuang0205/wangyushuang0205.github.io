@@ -1,6 +1,7 @@
 export default {
   // 公司基本信息
-  title: '回回·摄影工作室',
+  // title: '回回·摄影工作室',
+  title: '这里是标题',
   name:'I JUST WANNER RUN',
   introduce:'青岛回回·摄影工作室成立于2019年9月16日，回回服务小众，品质高端，主营业务为高端个人写真、儿童私人摄影、商业摄影、毕业摄影等。',
   contact:'王玉双',
@@ -66,7 +67,31 @@ export default {
     },
     {
       index:6,
-      url  : require('@/assets/img/banner/banner7.jpg'),
+      url  : require('@/assets/img/banner/banner1.jpg'),
+      // children : {
+      //   url      : require('@/assets/img/banner/banner7.jpg'),
+      //   title    : '第二张图片上的标题',
+      //   introduce: '第二张图片上的文字',
+      // }
+    },{
+      index:7,
+      url  : require('@/assets/img/banner/banner5.jpg'),
+      // children : {
+      //   url      : require('@/assets/img/banner/banner7.jpg'),
+      //   title    : '第二张图片上的标题',
+      //   introduce: '第二张图片上的文字',
+      // }
+    },{
+      index:8,
+      url  : require('@/assets/img/banner/banner3.jpg'),
+      // children : {
+      //   url      : require('@/assets/img/banner/banner7.jpg'),
+      //   title    : '第二张图片上的标题',
+      //   introduce: '第二张图片上的文字',
+      // }
+    },{
+      index:9,
+      url  : require('@/assets/img/banner/banner3.jpg'),
       // children : {
       //   url      : require('@/assets/img/banner/banner7.jpg'),
       //   title    : '第二张图片上的标题',
