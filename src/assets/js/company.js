@@ -10,7 +10,8 @@ export default {
   email:'1692801028@qq.com',
   mp_code:require('@/assets/img/code.jpg'),
   wx_code:require('@/assets/img/code.jpg'),
-  // 走马灯
+  //首页展示精选图片
+  //
   banner:[
     {
       index    : 0,
@@ -97,6 +98,124 @@ export default {
       //   title    : '第二张图片上的标题',
       //   introduce: '第二张图片上的文字',
       // }
+    },
+  ],
+  img_view:[
+    {
+      index  : 0,//第一条放公司简介
+      label  : '人物写真',
+      banner : [
+        { index : 0, url : require('@/assets/img/product/1.jpg') , label  : '作品1'},
+        { index : 1, url : require('@/assets/img/product/1.jpg') , label  : '作品2'},
+        { index : 2, url : require('@/assets/img/product/3.jpg') , label  : '作品3'},
+        { index : 3, url : require('@/assets/img/product/4.jpg') , label  : '作品4'},
+        { index : 4, url : require('@/assets/img/product/5.jpg') , label  : '作品5'},
+        { index : 5, url : require('@/assets/img/product/6.jpg') , label  : '作品6'},
+      ],
+      content: '<p><strong>人物写真:</strong></p><p>这里是人物写真介绍</p>',
+    },
+    {
+      index  : 1,
+      label  : '毕业季',
+      banner : [
+        { index : 0, url : require('@/assets/img/product/2.jpg')},
+        { index : 1, url : require('@/assets/img/product/2.jpg')},
+        { index : 2, url : require('@/assets/img/product/3.jpg')},
+        { index : 3, url : require('@/assets/img/product/4.jpg')},
+        { index : 4, url : require('@/assets/img/product/5.jpg')},
+        { index : 5, url : require('@/assets/img/product/1.jpg')},
+      ],
+      content: '<p><strong>毕业季:</strong></p><p>这里是人物写真介绍</p>',
+    },
+    {
+      index  : 2,
+      label  : '高端定制',
+      banner : [
+        { index : 0, url : require('@/assets/img/product/3.jpg')},
+        { index : 1, url : require('@/assets/img/product/2.jpg')},
+        { index : 2, url : require('@/assets/img/product/1.jpg')},
+        { index : 3, url : require('@/assets/img/product/4.jpg')},
+        { index : 4, url : require('@/assets/img/product/5.jpg')},
+        { index : 5, url : require('@/assets/img/product/6.jpg')},
+      ],
+      content: '<p><strong>高端定制:</strong></p><p>这里是人物写真介绍</p>',
+    },
+    {
+      index  : 3,
+      label  : '故事记录',
+      banner : [
+        { index : 0, url : require('@/assets/img/product/4.jpg')},
+        { index : 1, url : require('@/assets/img/product/1.jpg')},
+        { index : 2, url : require('@/assets/img/product/3.jpg')},
+        { index : 3, url : require('@/assets/img/product/2.jpg')},
+        { index : 4, url : require('@/assets/img/product/5.jpg')},
+        { index : 5, url : require('@/assets/img/product/6.jpg')},
+      ],
+      content: '<p><strong>故事记录:</strong></p><p>这里是人物写真介绍</p>',
+    },
+    {
+      index  : 4,
+      label  : '商业摄影',
+      banner : [
+        { index : 0, url : require('@/assets/img/product/5.jpg')},
+        { index : 1, url : require('@/assets/img/product/2.jpg')},
+        { index : 2, url : require('@/assets/img/product/3.jpg')},
+        { index : 3, url : require('@/assets/img/product/4.jpg')},
+        { index : 4, url : require('@/assets/img/product/5.jpg')},
+        { index : 5, url : require('@/assets/img/product/6.jpg')},
+      ],
+      content: '<p><strong>商业摄影:</strong></p><p>这里是人物写真介绍</p>',
+    },
+    {
+      index  : 5,
+      label  : '拼接艺术-纯真',
+      banner : [
+        { index : 0, url : require('@/assets/img/product/6.jpg')},
+        { index : 1, url : require('@/assets/img/product/2.jpg')},
+        { index : 2, url : require('@/assets/img/product/3.jpg')},
+        { index : 3, url : require('@/assets/img/product/4.jpg')},
+        { index : 4, url : require('@/assets/img/product/5.jpg')},
+        { index : 5, url : require('@/assets/img/product/6.jpg')},
+      ],
+      content: '<p><strong>拼接艺术-纯真:</strong></p><p>这里是人物写真介绍</p>',
+    },
+    {
+      index  : 6,
+      label  : '拼接艺术-瞭望',
+      banner : [
+        { index : 0, url : require('@/assets/img/product/2.jpg')},
+        { index : 1, url : require('@/assets/img/product/3.jpg')},
+        { index : 2, url : require('@/assets/img/product/3.jpg')},
+        { index : 3, url : require('@/assets/img/product/4.jpg')},
+        { index : 4, url : require('@/assets/img/product/5.jpg')},
+        { index : 5, url : require('@/assets/img/product/6.jpg')},
+      ],
+      content: '<p><strong>拼接艺术-瞭望:</strong></p><p>这里是人物写真介绍</p>',
+    },
+    {
+      index  : 7,
+      label  : '完美摄影-未来可期',
+      banner : [
+        { index : 0, url : require('@/assets/img/product/3.jpg')},
+        { index : 1, url : require('@/assets/img/product/2.jpg')},
+        { index : 2, url : require('@/assets/img/product/3.jpg')},
+        { index : 3, url : require('@/assets/img/product/4.jpg')},
+        { index : 4, url : require('@/assets/img/product/5.jpg')},
+        { index : 5, url : require('@/assets/img/product/6.jpg')},
+      ],
+      content: '<p><strong>完美摄影-未来可期:</strong></p><p>这里是人物写真介绍</p>',},
+    {
+      index  : 8,
+      label  : '联系我们',
+      banner : [
+        { index : 0, url : require('@/assets/img/product/1.jpg')},
+        { index : 1, url : require('@/assets/img/product/2.jpg')},
+        { index : 2, url : require('@/assets/img/product/3.jpg')},
+        { index : 3, url : require('@/assets/img/product/4.jpg')},
+        { index : 4, url : require('@/assets/img/product/5.jpg')},
+        { index : 5, url : require('@/assets/img/product/6.jpg')},
+      ],
+      content: '很荣幸在这里给您介绍我司的主要产品，产品功能还有很多不一一介绍了，若您有意向可点击“联系我们”联系我们哦~~',
     },
   ],
   promise:[

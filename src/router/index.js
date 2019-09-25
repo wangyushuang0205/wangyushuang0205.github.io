@@ -15,6 +15,7 @@ const pc_contact      = () => import('@/components/index/pc/pc_contact.vue');
 const pc_introduce    = () => import('@/components/index/pc/pc_introduce.vue');
 const pc_Imageinfo    = () => import('@/components/index/pc/pc_Imageinfo.vue');
 
+const mp_preview      = () => import('@/components/index/mp/mp_preview.vue');
 const mp_index        = () => import('@/components/index/mp/mp_index.vue');
 const mp_product      = () => import('@/components/index/mp/mp_product.vue');
 
@@ -95,6 +96,12 @@ export default new Router({
           }
         }
       ]
+    },
+    {
+      path: '/mp_preview',
+      component: mp_preview,
+      name: 'mp_preview',
+      meta:{ type : 'mp'},
     },
     {
       path: '/mp_index',

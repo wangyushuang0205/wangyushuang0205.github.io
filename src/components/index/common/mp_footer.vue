@@ -3,11 +3,11 @@
     <!-- 首页足部 -->
     <div v-if="index.isShow" class="index-footer">
       <!-- 首页 -->
-      <span @click="$router.push({ name : 'mp_index'})" :class="index.isActive == 'index' ? 'active':''"><i class="iconfont iconhome"></i>首页</span>
+      <span @click="$router.push({ name : 'mp_index'})" :class="index.isActive == 'index' ? 'active':''"><i class="iconfont iconyemian"></i>首页</span>
       <!-- @click="before('product')" 消息 -->
-      <span @click="$router.push({ name : 'mp_product'})" :class="index.isActive == 'product' ? 'active':''" info="20"><i class="iconfont iconchanpin"></i>产品相关</span>
+      <span @click="$router.push({ name : 'mp_product'})" :class="index.isActive == 'product' ? 'active':''" info="20"><i class="iconfont iconeditor-xiangce-copy"></i>照片欣赏</span>
       <!-- @click="before('咨询')" 我的 -->
-      <span @click="beforeCall()"><i class="iconfont icondh"></i>咨询</span>
+      <span @click="beforeCall()"><i class="iconfont iconzixun3"></i>咨询</span>
     </div>
   </div>
 </template>

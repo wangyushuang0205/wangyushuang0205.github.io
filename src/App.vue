@@ -27,7 +27,7 @@ export default {
       if (this.isMobile()) {
         let type = this.$route.meta.type;
         if (type && type == 'pc') {
-            this.$router.push({ name: 'mp_index' });
+          this.$router.push({ name: 'mp_preview' });
         }
       }
       $(".con").scrollTop(0);

@@ -9,10 +9,10 @@
         <p>系统内置渠道商、合作商、地图资源管理等多种功能，能够满足绝大数企业的需要</p>
       </div>
       <div class="contacts-2">
-        <img src="@/assets/img/introduce/1.png">
+        <img src="@/assets/img/product/1.jpg">
       </div>
       <div class="contacts-3">
-        <img src="@/assets/img/introduce/2.png">
+        <img src="@/assets/img/product/2.jpg">
       </div>
     </div>
   </div>

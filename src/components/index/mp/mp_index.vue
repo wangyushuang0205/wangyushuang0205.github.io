@@ -1,7 +1,7 @@
 <template>
   <div class="mobile-index">
     <div class="index-header">
-      <span>菊房易卖有限公司</span>
+      <span>回回摄影工作室</span>
     </div>
     <!-- 轮播 -->
     <mpBanner class="mp-banner"></mpBanner>
@@ -49,16 +49,6 @@
           </div>
         </div>
       </div>
-<!--     <div class="index-3">
-      <img class="index-3-img-1" src="https://15865747.s61i.faiusr.com/2/AD0Ik6-IBxACGAAghZmx0gUosML9RzCADzioBQ.jpg">
-      <div>
-        <p class="index-3-title">我们能做什么？</p>
-        <div>
-          
-        </div>
-        <img src="@/assets/img/index/3.png">
-      </div>
-    </div> -->
       <div class="index-4">
         <p class="index-4-title">功能模块</p>
         <div class="index-4-box">
@@ -93,25 +83,25 @@ export default {
         { icon: 'el-icon-edit-outline',    label: '业务报表',   color: '#E6A23C' },
         { icon: 'el-icon-office-building', label: '城市新房',   color: '#9fb2c5' },
         { icon: 'el-icon-film',            label: '门店',       color: '#409EFF' },
-        { icon: 'el-icon-link',            label: '资源调配',    color: '#67C23A' },
-        { icon: 'el-icon-guide',           label: '逾期转出',    color: '#409EFF' },
-        { icon: 'el-icon-search',          label: '全局匹配',    color: '#cccbcb' },
-        { icon: 'el-icon-document-copy',   label: '报备统计',    color: '#E6A23C' },
-        { icon: 'el-icon-discount',        label: '专属渠道',    color: '#67C23A' },
-        { icon: 'el-icon-receiving',       label: '合作分组',    color: 'lightblue' },
-        { icon: 'el-icon-message',         label: '业务提醒',    color: '#409EFF' },
-        { icon: 'el-icon-share',           label: '分享房源',    color: 'pink' },
-        { icon: 'el-icon-chat-dot-round',  label: '私人定制',    color: '#009688' },
-        { icon: 'el-icon-reading',         label: '公告牌',      color: 'lightblue' },
-        { icon: 'el-icon-mobile-phone',    label: '支持手机',    color: 'orange' },
-        { icon: 'el-icon-more-outline',    label: '更多惊喜',    color: '#cccbcb' },
+        { icon: 'el-icon-link',            label: '资源调配',   color: '#67C23A' },
+        { icon: 'el-icon-guide',           label: '逾期转出',   color: '#409EFF' },
+        { icon: 'el-icon-search',          label: '全局匹配',   color: '#cccbcb' },
+        { icon: 'el-icon-document-copy',   label: '报备统计',   color: '#E6A23C' },
+        { icon: 'el-icon-discount',        label: '专属渠道',   color: '#67C23A' },
+        { icon: 'el-icon-receiving',       label: '合作分组',   color: 'lightblue' },
+        { icon: 'el-icon-message',         label: '业务提醒',   color: '#409EFF' },
+        { icon: 'el-icon-share',           label: '分享房源',   color: 'pink' },
+        { icon: 'el-icon-chat-dot-round',  label: '私人定制',   color: '#009688' },
+        { icon: 'el-icon-reading',         label: '公告牌',     color: 'lightblue' },
+        { icon: 'el-icon-mobile-phone',    label: '支持手机',   color: 'orange' },
+        { icon: 'el-icon-more-outline',    label: '更多惊喜',   color: '#cccbcb' },
       ],
     }
   },
   methods: {
     handleScroll() {
       let top    = document.documentElement.scrollTop || document.body.scrollTop;
-      let height = $('.mint-swipe').height();
+      let height = $('.van-swipe').height();
       let a      = top / (height*0.5);
       $('.index-header').css('backgroundColor','rgba(255, 255, 255,' + a + ')');
       if (top >= (height*0.5)) {

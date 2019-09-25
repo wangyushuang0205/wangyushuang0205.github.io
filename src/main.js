@@ -10,6 +10,9 @@ import 'element-ui/lib/theme-chalk/index.css';
 import $ from 'jquery';
 import Mint from 'mint-ui';
 import 'mint-ui/lib/style.css';
+import Vant from 'vant';
+import { Lazyload } from 'vant';
+import 'vant/lib/index.css';
 import animated from 'animate.css'
 import base from '@/assets/js/base.js'
 import company from '@/assets/js/company.js'
@@ -22,6 +25,7 @@ Vue.config.productionTip = false
 Vue.prototype.$axios = axios;
 Vue.use(ElementUI, { size: 'small', zIndex: 3000 });
 Vue.use(Mint);
+Vue.use(Vant);
 /* eslint-disable no-new */
 new Vue({
   router,

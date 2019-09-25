@@ -58,6 +58,16 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  .pc-banner {
+    height: 360px;
+    width: 70%;
+  }
+
+  .pc-banner-full {
+    height: 550px;
+  }
+
   .pc-contacts {
     width: 100%;
     display: flex;
@@ -123,7 +133,6 @@ export default {
             margin-left: 30px;
           }
         }
-
       }
     }
   }
