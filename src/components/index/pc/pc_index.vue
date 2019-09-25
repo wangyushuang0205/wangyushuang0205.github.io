@@ -2,6 +2,7 @@
   <div class="index">
     <!-- 背景图片，固定在下层 -->
     <div class="background">
+      <!-- <pcBanner class="pc-banner"></pcBanner> -->
       <img src="@/assets/img/banner/banner1.jpg">
     </div>
     <!-- 图片上面的内容 -->
@@ -40,10 +41,12 @@
   </div>
 </template>
 <script>
-import pcHeader from '@/components/index/common/pc_header';
+import pcBanner    from '@/components/common/pc/pc_banner';
+import pcHeader    from '@/components/index/common/pc_header';
 import pcImageinfo from '@/components/index/pc/pc_Imageinfo';
 export default {
   components: {
+    pcBanner,
     pcHeader,
     pcImageinfo
   },
@@ -61,14 +64,6 @@ export default {
     },
   },
   mounted() {
-    let arr = [1,1,2,3,4,5,5,6]
-    let arr2 = arr.reduce(function(ar,cur) {
-      if(!ar.includes(cur)) {
-        ar.push(cur)
-      }
-      return ar
-    },[])
-    console.log(arr2);
     // //获取元素
     // var oDownPage = document.getElementById('background');
     // var oTopPage  = document.getElementById('top-content');
@@ -120,6 +115,14 @@ export default {
     z-index: -1;
     top: 0;
     left: 0;
+    .pc-banner {
+      height: 100%;
+      width: 100%;
+    }
+
+    // .pc-banner-full {
+    //   height: 550px;
+    // }
     img{
       width: 100%;
       height: 100%;

@@ -246,7 +246,6 @@ export default {
       }
       li:hover{
         background: rgba(0, 0, 0, 0.8);
-        border-radius:0 50% 0 50%;
       }
       li:hover img {
         opacity: 0.6;

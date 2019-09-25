@@ -38,20 +38,20 @@ export default {
 
   },
   mounted() {
-    $(function() {
-      var beforeScrollTop = $(".con").scrollTop();
-      document.getElementById("con").addEventListener("scroll",function() {
-        var afterScrollTop = $(".con").scrollTop();
-        var delta = afterScrollTop - beforeScrollTop;
-        let h = $(".header-left").height();
-        if (delta !== 0) {
-          let h = $(".header-left").height();
-          $(".pc-header").height(h);
-        } else {
-          $(".pc-header").animate({"height" : 100+"px"});
-        };
-      },true);
-    });
+    // $(function() {
+    //   var beforeScrollTop = $(".con").scrollTop();
+    //   document.getElementById("con").addEventListener("scroll",function() {
+    //     var afterScrollTop = $(".con").scrollTop();
+    //     var delta = afterScrollTop - beforeScrollTop;
+    //     let h = $(".header-left").height();
+    //     if (delta !== 0) {
+    //       let h = $(".header-left").height();
+    //       $(".pc-header").height(h);
+    //     } else {
+    //       $(".pc-header").animate({"height" : 100+"px"});
+    //     };
+    //   },true);
+    // });
   },
   watch: {
   }

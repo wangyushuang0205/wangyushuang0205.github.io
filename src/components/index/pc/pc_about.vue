@@ -6,7 +6,13 @@
     <div class="top-content">
       <pcHeadline main="关于我们" subtitle="ABOUT US"></pcHeadline>
       <div class="intro">
-        <p class="company">{{company.title}}</p>
+        <div class="actor">
+          <p class="actor_out">
+            <img src="https://ccdn.goodq.top/caches/9102962aafdbb7d6f228dc3afcdb2fb0/aHR0cHM6Ly81ZDE5YTg4MzE3Y2JmLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYWU5M2Y2MDA2NDgwN2Y3ZDk0MGM0ZWM4YzJmYWI1YjAuanBn.jpg" alt="">
+            <p>回回摄影工作室名片</p>
+          </p>
+        </div>
+        <!-- <p class="company">{{company.title}}</p> -->
         <p class="introduce">{{company.introduce}}</p>
       </div>
     </div>
@@ -36,6 +42,7 @@ export default {
 <style lang="less" scoped>
 .pc-about {
   width: 100%;
+  color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,128 +66,63 @@ export default {
     height: 100%;
     background: rgba(0, 0, 0, 0.2);
 
-  .intro {
-    width: 70%;
-    margin: 30px auto;
-    min-height: 400px;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    box-shadow: 0 0 3px #FFF;
-    padding: 35px 0;
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    justify-content: center;
-    // border: 1px solid #fff;
-    background: rgba(0, 0, 0, 0.3);
+    .intro {
+      width: 65%;
+      margin: 30px auto;
+      min-height: 400px;
+      border-radius: 5px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      box-shadow: 0 0 3px #FFF;
+      padding: 35px 0;
+      display: flex;
+      flex-direction: column;
+      align-items:center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.3);
+      .actor{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-radius: 10%;
+        border-bottom: 1px solid #fff;
 
-    .company {
-      color: orange;
-      font-size: 40px;
-      width: 100%;
-      text-align: center;
-      letter-spacing: 10px;
-      text-shadow: 2px 2px 2px rgba(255, 0, 0, 0.3);
-    }
-    .introduce{
-      width:85%;
-      margin:0 auto;
-      padding: 30px;
-      font-size: 16px;
-      line-height: 30px;
-      text-indent:35px;
-      letter-spacing: 1px;
-      color: #fff;
+        .actor_out{
+          width: 180px;
+          height: 180px;
+          border-radius: 50%;
+          padding: 10px;
+          img{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+          }
+        }
+      }
+      .company {
+        color: orange;
+        font-size: 40px;
+        width: 100%;
+        text-align: center;
+        letter-spacing: 10px;
+        text-shadow: 2px 2px 2px rgba(255, 0, 0, 0.3);
+      }
+      .introduce{
+        width:85%;
+        margin:0 auto;
+        padding: 30px;
+        font-size: 16px;
+        line-height: 30px;
+        text-indent:35px;
+        letter-spacing: 1px;
+      }
     }
   }
-  }
-
 }
 
-// .pc-contacts {
-//   width: 100%;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-
-//   .pc-banner {
-//     height: 360px;
-//     width: 70%;
-//   }
-
-//   .pc-banner-full {
-//     height: 550px;
-//   }
-
-//   .contacts {
-//     width: 70%;
-//     min-height: 400px;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     border-radius: 5px;
-//     -moz-border-radius: 5px;
-//     -webkit-border-radius: 5px;
-//     box-shadow: 0 0 3px gray;
-//     padding: 30px 0;
-
-//     .company {
-//       color: orange;
-//       font-size: 40px;
-//       width: 100%;
-//       text-align: center;
-//       letter-spacing: 10px;
-//       text-shadow:2px 2px 2px rgba(255,0,0,0.3);
-//     }
-
-//     .contacts_box {
-//       display: flex;
-//       flex-flow: row nowrap;
-//       justify-content: space-around;
-//       margin-top: 50px;
-
-//       .contacts_left {
-//         width: 45%;
-//         height: 175px;
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: center;
-//         align-items:center;
-
-//         p {
-//           width:50%;
-//           margin: 0 auto;
-//           line-height: 40px;
-//           min-width: 200px;
-
-//           i {
-//             color: orange;
-//             font-size: 25px;
-//           }
-//         }
-
-//         span {
-//           margin-left: 30px;
-//         }
-//       }
-
-//       .contacts_right {
-//         width: 55%;
-//         display: inline-flex;
-//         justify-content: space-around;
-
-//         img{
-//           width:160px;
-//           height: 160px;
-//         }
-//         p{
-//           width:160px;
-//           text-align: center;
-//         }
-//       }
-//     }
-//   }
-// }
 </style>
