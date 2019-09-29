@@ -27,6 +27,13 @@
       "unicode_decimal": 59289
     },
     {
+      "icon_id": "978094",
+      "name": "摄影",
+      "font_class": "sheying",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
       "icon_id": "1155292",
       "name": "照片",
       "font_class": "editor-xiangce-copy",
@@ -34,11 +41,25 @@
       "unicode_decimal": 58905
     },
     {
+      "icon_id": "1214049",
+      "name": "摄影师",
+      "font_class": "sheyingshi",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
       "icon_id": "2338090",
       "name": "资讯",
       "font_class": "zixun",
       "unicode": "e74c",
       "unicode_decimal": 59212
+    },
+    {
+      "icon_id": "2749300",
+      "name": "关于我们",
+      "font_class": "guanyuwomen",
+      "unicode": "e820",
+      "unicode_decimal": 59424
     },
     {
       "icon_id": "2944300",

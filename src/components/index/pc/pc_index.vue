@@ -82,7 +82,6 @@ export default {
       $('.top-content-one-float').css('height',h);
       document.getElementById("con").addEventListener("scroll",function() {
         var top = $(".con").scrollTop();
-        // console.log(top);
         if (top > 100) {
           $('.top-content-two-up').addClass('animated fadeInUp')
         }
@@ -119,10 +118,6 @@ export default {
       height: 100%;
       width: 100%;
     }
-
-    // .pc-banner-full {
-    //   height: 550px;
-    // }
     img{
       width: 100%;
       height: 100%;

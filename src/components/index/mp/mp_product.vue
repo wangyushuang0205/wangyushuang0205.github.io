@@ -1,26 +1,26 @@
 <template>
-  <div class="news_item">
-    <mpBanner class="mp-banner"></mpBanner>
-    <pcHeadline main="产品相关" subtitle="INDUSTRY INFORMATION"></pcHeadline>
-    <div class="news" v-for="item in list" :key="item.index">
-      <p class="title-p"><span class="title-span"><span>{{item.index+1}}</span></span></p>
-      <el-divider>{{item.label}}</el-divider>
-      <div v-if="showData.banner">
-        <el-carousel :interval="4000">
-          <el-carousel-item v-for="item in showData.banner" :key="item.index">
-            <div class="picture">
-              <img class="medium" :src="item.url"></img>
-              <span>{{item.label}}</span>
+  <div class="mp_product">
+    <mpHeader ref="mpHeader"></mpHeader>
+    <div class="content">
+      <img src="https://ccdn.goodq.top/caches/9102962aafdbb7d6f228dc3afcdb2fb0/aHR0cHM6Ly81ZDE5YTg4MzE3Y2JmLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYWU5M2Y2MDA2NDgwN2Y3ZDk0MGM0ZWM4YzJmYWI1YjAuanBn.jpg" class="background">
+      <pcHeadline main="照片欣赏" subtitle="PHOTO" class="pc_headline"></pcHeadline>
+      <div class="news" v-for="item in list" :key="item.index">
+        <div class="card">
+          <el-card class="box-card">
+            <div class="text item">
+              <p v-html="item.content"></p>
             </div>
-          </el-carousel-item>
-        </el-carousel>
-      </div>
-      <div class="right_first">
-        <el-card class="box-card">
-          <div class="text item">
-            <p v-html="item.content"></p>
-          </div>
-        </el-card>
+            <div v-if="list[item.index].banner">
+              <van-swipe :autoplay="3000" indicator-color="white">
+                <van-swipe-item v-for="(item,index) in list[item.index].banner" :key="index">
+                  <div class="picture">
+                    <van-image fit="cover" class="medium" :src="item.url"/><!--  @click="previewImage(item,index)" -->
+                  </div>
+                </van-swipe-item>
+              </van-swipe>
+            </div>
+          </el-card>
+        </div>
       </div>
     </div>
     <div class="index-footer">
@@ -29,150 +29,119 @@
   </div>
 </template>
 <script>
+import mpHeader from '@/components/index/common/mp_header';
 import pcHeadline from '../../common/pc/pc_headline';
 import mpBanner from '@/components/common/mp/mp_banner';
 import mpFooter from '@/components/index/common/mp_footer';
+import { ImagePreview } from 'vant';
 export default {
   components: {
+    mpHeader,
     pcHeadline,
     mpBanner,
     mpFooter
   },
   data() {
     return {
-      isShow: true,
-      active: 0,
-      list: [],
-      showData: '',
+      isShow : false,
+      active : 0,
+      list   : [],
+      imagesArr:[],
+      current    : 0,
     }
   },
   methods: {
-    // showRight(item) {
-    //   if (item) {
-    //     this.showData = item;
-    //     this.active = item.index;
+    // previewImage(item,index){
+    //   let _self  = this;
+    //   for (let i = 0; i <= _self.list.length - 1; i++) {
+    //     for (let j = 0; j <= _self.list[i].banner.length - 1; j++) {
+    //       _self.imagesArr.push(_self.list[i].banner[j].url);
+    //     }
     //   }
+    //   ImagePreview({
+    //     images: _self.imagesArr,
+    //     startPosition: item.index,
+    //     closeOnPopstate: true,//是否在页面回退时自动关闭
+    //     onClose(){
+    //       _self.imagesArr = [];
+    //     }
+    //   });
     // },
   },
   mounted() {
-    this.list     = this.company.img_view;
-    this.showData = this.list[0];
+    this.list = this.company.img_view;
+    $(function () {
+      var w = $(".van-swipe").width();
+      $(".van-swipe").height(w);
+    });
   },
 }
 
 </script>
 <style lang="less" scoped>
-.news_item {
+.mp_product {
   width: 100%;
-  .headline /deep/ .top[data-v-336ad570]{
-    font-size: 1.4rem;
-  }
-  .headline /deep/ .bottom[data-v-336ad570]{
-    font-size: 0.5rem;
-  }
-  .news {
+  .content{
+    position: absolute;
     width: 100%;
     height: 100%;
+    top: 60px;
+    left: 0;
+    overflow-y: scroll;
+    padding-bottom: 80px;
+    .headline /deep/ .top[data-v-336ad570]{
+      font-size: 1.4rem;
+    }
+    .headline /deep/ .bottom[data-v-336ad570]{
+      font-size: 1rem;
+    }
 
-    .title-p {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .background{
       width: 100%;
-      margin: 20px 0;
-
-      .title-span {
-        display: block;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 30px;
-        color: #26a2ff;
-        width: 55px;
-        height: 55px;
-        border: 1px solid #66b1ff;
-
-        span {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 50%;
-          width: 45px;
-          height: 45px;
-          border: 1px dashed #66b1ff;
-        }
-      }
-    }
-    .el-divider{
-      text-align: center;
-    }
-
-    .el-carousel__item {
-      width: 100%;
-
-      .picture {
-        height: 100%;
-        cursor: pointer;
-
-        .medium {
-          width: 100%;
-          height: 100%;
-        }
-
-      }
-
-    }
-  }
-
-  .right_first {
-    .title {
-      cursor: pointer;
-      font-size: 20px;
-    }
-
-    .el-icon-arrow-left {
-      color: #409EFF;
-      position: relative;
-      animation: move 0.8s infinite;
-
-      @keyframes move {
-        0% {
-          left: 0px;
-        }
-
-        50% {
-          left: 4px;
-        }
-
-        100% {
-          left: 0px;
-        }
-      }
-    }
-
-    .tip {
-      font-size: 14px;
-      color: #409EFF;
-    }
-
-    .text {
       height: auto;
-      font-size: 18px;
-      line-height: 30px;
+      margin: 0 auto;
     }
-
-    .item {
-      margin-bottom: 18px;
+    .pc_headline{
+      height: 100px;
+    }
+    .news {
       width: 100%;
-      text-indent: 25px;
-    }
+      height: auto;
+      .card {
+        .box-card{
+          width: 95%;
+          margin: 20px auto 0 auto;
+          .text {
+            height: auto;
+            font-size: 0.8rem;
+            line-height: 30px;
+          }
 
+          .item {
+            margin-bottom: 18px;
+            width: 100%;
+            text-indent: 25px;
+          }
+
+          /deep/ .el-card__body{
+            padding: 10px;
+          }
+          .van-swipe {
+            width: 100%;
+
+            .picture {
+              height: 100%;
+              cursor: pointer;
+
+              .medium {
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
-
-.el-menu.el-menu--horizontal {
-  border-bottom: none;
-}
-
 </style>

@@ -16,6 +16,7 @@ import 'vant/lib/index.css';
 import animated from 'animate.css'
 import base from '@/assets/js/base.js'
 import company from '@/assets/js/company.js'
+import vueWaterfallEasy from 'vue-waterfall-easy'
 Vue.prototype.company = company
 Vue.prototype.base = base
 

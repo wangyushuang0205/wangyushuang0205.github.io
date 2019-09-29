@@ -27,9 +27,10 @@ export default {
       if (this.isMobile()) {
         let type = this.$route.meta.type;
         if (type && type == 'pc') {
-          this.$router.push({ name: 'mp_preview' });
+          this.$router.push({ name: 'mp_index' });
         }
       }
+      //进入新页回到顶部
       $(".con").scrollTop(0);
     }
   }

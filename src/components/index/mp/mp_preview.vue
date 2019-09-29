@@ -28,26 +28,8 @@ export default {
         _self.$router.push({ name : item.target });
       }
     },
-    handleScroll() {
-      let top    = document.documentElement.scrollTop || document.body.scrollTop;
-      let height = $('.van-swipe').height();
-      let a      = top / (height*0.5);
-      $('.index-header').css('backgroundColor','rgba(255, 255, 255,' + a + ')');
-      if (top >= (height*0.5)) {
-        $('.index-header').css('color','#000');
-      }else{
-        $('.index-header').css('color','#fff');
-      }
-    },
   },
   mounted() {
-  },
-  created() {
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  // 离开该页面需要移除这个监听的事件
-  destroyed() {
-    window.removeEventListener('scroll', this.handleScroll);
   },
 }
 

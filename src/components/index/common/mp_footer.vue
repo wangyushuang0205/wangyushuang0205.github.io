@@ -6,8 +6,9 @@
       <span @click="$router.push({ name : 'mp_index'})" :class="index.isActive == 'index' ? 'active':''"><i class="iconfont iconyemian"></i>首页</span>
       <!-- @click="before('product')" 消息 -->
       <span @click="$router.push({ name : 'mp_product'})" :class="index.isActive == 'product' ? 'active':''" info="20"><i class="iconfont iconeditor-xiangce-copy"></i>照片欣赏</span>
+      <span @click="$router.push({ name : 'mp_about'})" :class="index.isActive == 'about' ? 'active':''" info="20"><i class="iconfont iconguanyuwomen"></i>关于我们</span>
       <!-- @click="before('咨询')" 我的 -->
-      <span @click="beforeCall()"><i class="iconfont iconzixun3"></i>咨询</span>
+      <span @click="beforeCall()" class="cantact"><i class="iconfont iconzixun3"></i>咨询</span>
     </div>
   </div>
 </template>
@@ -31,12 +32,15 @@ export default {
         showCancelButton: true
       }).then(action => {
         if (action == 'confirm') {
-          window.location.href = 'tel://15063918700';
+          window.location.href = 'tel://17866627884';
         }
       });
     },
   },
   mounted() {
+    $('.cantact').on('click',function(e){
+      $(this).css("color","#009fe9").siblings().css("color","gray");
+    });
     if (this.props) {
       if (this.props.index) {
         this.props.index.isShow?this.index.isShow=true:null;
@@ -78,7 +82,7 @@ export default {
     padding: 0;
     color: gray;
     .active{
-      color: #2a74f4;
+      color: #009fe9;
     }
     span{
       display: flex;

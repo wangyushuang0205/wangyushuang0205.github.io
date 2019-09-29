@@ -24,7 +24,6 @@
                 <el-carousel-item v-for="item in showData.banner" @click="showRight(item)" :key="item.index">
                   <div class="picture">
                     <img class="medium" :src="item.url">
-                    <!-- <span v-text="item.label"></span> -->
                   </div>
                 </el-carousel-item>
               </el-carousel>
@@ -43,7 +42,7 @@
             </el-card>
           </div>
           <div class="img_list_second">
-            <li v-for="item in showData.banner" :key="item.index"><img :src="item.url" class="img_view"></li>
+            <li v-for="item in showData.banner" :key="item.index"><van-image fit="cover" class="img_view" :src="item.url"/></li>
           </div>
         </div>
       </div>
@@ -69,6 +68,14 @@ export default {
       if (item) {
         this.showData = item;
         this.active = item.index;
+        //点击变换时改变图片的宽高
+        $(function() {
+          var w = $('.img_list_first').width();
+          $('.img_list_second').css('width',w);
+          let w1 = w / 3 - 10;
+          $('.img_view').css('width', w1);
+          $('.img_view').css('height', w1);
+        });
       }
     },
   },
@@ -203,17 +210,6 @@ export default {
                 height: 380px;
                 border-radius: 10px;
               }
-              // span {
-              //   position: absolute;
-              //   bottom: 0;
-              //   left: 0;
-              //   display: block;
-              //   width: 100%;
-              //   height: 40px;
-              //   line-height: 40px;
-              //   background-color: rgba(0, 0, 0, 0.5);
-              //   color: white;
-              // }
             }
           }
         }
