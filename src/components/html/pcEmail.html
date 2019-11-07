@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Email</title>
+</head>
+
+<body style="margin: 0;padding: 0;">
+  <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    var height        = $("#cover").height();
+    var window_height = $(window).height(); //获取浏览器窗口宽度
+    var height2       = (window_height-height)/2;
+    var imgH          = $('#img1').width();
+	  $("#cover").css({'padding-top': '50px','padding-bottom': height2});
+    $('#content1').css({'height':imgH,'min-height':'400px'});
+
+    // 自适应
+    $(window).resize(function() {
+      if (window_height > height) {
+		    $("#cover").css({'padding-top': '50px','padding-bottom': height2});
+        $('#content1').css({'height':imgH,'min-height':'300px'});
+      }
+    });
+  });
+  </script>
+<div style="width: 100%;min-width: 700px;">
+    <!-- 背景图片，固定在下层 -->
+    <div style="width: 100%;height: 100%;margin: 0 auto;position: fixed;z-index: -1;top: 0;left: 0;min-width: 700px;">
+      <img src="http://img0.imgtn.bdimg.com/it/u=1347244250,3674568992&fm=11&gp=0.jpg" style="width: 100%;height: 100%;">
+    </div>
+    <!-- 内容 -->
+
+    <div id="cover" style="width: 100%;height: 100%;margin: 0 auto;background: rgba(0, 0, 0, 0.5);">
+	    <p style="display: flex;flex-direction: column;justify-content: center;align-items: center;margin: 0 auto;font-size: 35px;letter-spacing: 10px;color: #fff;padding: 20px 0;">博客知识库更新通知
+	    </p>
+      <p style="width: 77.44%;margin: 0 auto;color: #fff;line-height: 30px;">尊敬的冰墩墩用户：</p>
+      <p style="width: 77.44%;margin: 0 auto;color: #fff;line-height: 30px;padding-bottom: 10px;text-indent: 30px;border-bottom: 1px solid #ccc">你所关注的***博客发布了两条新内容，一起来看看吧~<a style="margin-left: 30px;color: blue" href="https://www.caixukang.cn/index#/index">点击进入博客</a></p>
+    	<div id="content1" style="width: 77.44%;margin: 42px auto 0 auto;">
+      	<img id="img1" src="https://ccdn.goodq.top/caches/9ce322c55ebcc6ced70674e9e5b9d10b/aHR0cHM6Ly81NzE4MzY2NGEwNjIwLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvYmVjZDA4ODJlMWVhNGJkOTVhZmY0YmFlNWZhMzE1ZWEtODAweDgwMC5qcGc_p_p100_p_3D.jpg" style="width: 30%;max-width: 350px;float: left;padding-right: 20px;">
+    		<p id="title"  style="color: #fff;text-align: left;text-indent: 30px;line-height: 30px;font-size: 22px;margin-bottom: 20px;">这里是中文阅读</p>
+    		<p id="details" style="width: 100%;margin: 0 auto;font-size: 17px;color: #fff;text-indent: 30px;padding-bottom: 20px;line-height: 32px;text-align: justify;">为了得到你问题的最佳答案，请遵循以下简单的指导原则。描述你的问题，并确保包括任何错误。单行主题很少会收到答案，也不只是发布截图。提供有关代码的示例并使用语法突出显示。在您的代码中分解问题，并提供到复制它的示例的链接。使用JSFiddle、CodePen、JSBin或CodeSandbox。遵循这几个步骤将极大地提高您获得高质量的问题答案的机会。记住，每个人都是来分享想法和利用自己的空闲时间来帮忙的。努力构思一个经过深思熟虑的主题是对这一点的赞扬。</p>
+    	</div>
+
+    	<div style="width: 77.44%;margin: 20px auto; padding: 20px 10px;border-top: 1px solid #ccc;">
+          <img id="img1" src="http://www.leawo.cn/attachment/201501/15/1723875_142131238905v4.jpg" style="width: 30%;max-width: 350px;margin: 22px 0;float: right;padding-left: 20px">
+          <p style="color: #fff;text-align: right;text-indent: 30px;line-height: 30px;font-size: 22px;margin-bottom: 20px;">这里是英文翻译</p>
+          <p style="color: #fff;width: 100%;margin: 0 auto;font-size: 17px;color: #fff;text-indent: 30px;padding-bottom: 20px;line-height: 32px;text-align: justify;">In order to receive the best answers to your questions please follow these simple guidelines.Be descriptive about your question or problem and be sure to include any errors. Single line topics will rarely receive answers and do not just post a screenshot.Provide examples of the code in question and use syntax highlighting.Breakdown the issue in your code and provide a link to an example that replicates it. Use JSFiddle, CodePen, JSBin, or CodeSandbox.Following these few steps will greatly improve your chances of getting a good quality answer to your issue. Remember, everyone is here to share ideas and to help out using their own free time. Making an effort to craft a well thought out topic pays tribute to this.</p>
+      </div>
+      
+    </div>
+</div>
+</body>
+</html>
