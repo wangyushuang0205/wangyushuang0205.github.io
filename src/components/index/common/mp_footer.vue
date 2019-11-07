@@ -8,7 +8,7 @@
       <span @click="$router.push({ name : 'mp_product'})" :class="index.isActive == 'product' ? 'active':''" info="20"><i class="iconfont iconeditor-xiangce-copy"></i>照片欣赏</span>
       <span @click="$router.push({ name : 'mp_about'})" :class="index.isActive == 'about' ? 'active':''" info="20"><i class="iconfont iconguanyuwomen"></i>关于我们</span>
       <!-- @click="before('咨询')" 我的 -->
-      <span @click="beforeCall()" class="cantact"><i class="iconfont iconzixun3"></i>咨询</span>
+      <span @click="$router.push({ name : 'mp_contact'})" :class="index.isActive == 'contact' ? 'active':''"><i class="iconfont iconzixun3"></i>咨询</span>
     </div>
   </div>
 </template>
@@ -25,20 +25,20 @@ export default {
     }
   },
   methods:{
-    beforeCall(){
-      MessageBox({
-        title: '提示',
-        message: '确认联系客服?',
-        showCancelButton: true
-      }).then(action => {
-        if (action == 'confirm') {
-          window.location.href = 'tel://17866627884';
-        }
-      });
-    },
+    // beforeCall(){
+    //   MessageBox({
+    //     title: '提示',
+    //     message: '确认联系客服?',
+    //     showCancelButton: true
+    //   }).then(action => {
+    //     if (action == 'confirm') {
+    //       window.location.href = 'tel://17866627884';
+    //     }
+    //   });
+    // },
   },
   mounted() {
-    $('.cantact').on('click',function(e){
+    $('.contact').on('click',function(e){
       $(this).css("color","#009fe9").siblings().css("color","gray");
     });
     if (this.props) {

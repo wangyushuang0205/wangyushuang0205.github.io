@@ -12,7 +12,7 @@
     </div> -->
     <div class="header-right">
       <ul>
-        <li v-if="item.isShow" v-for="(item,index) in menus" :key="index" @click="push(item,1,index)" :class="{'active':$route.name == item.target}" class="first">
+        <li v-if="item.isShow" v-for="(item,index) in menus" :key="index" @click="push(item,1,index)"  :class="$route.name == item.target ? 'active':''" class="first">
           <span>{{item.label}}</span>
         </li>
       </ul>
@@ -33,6 +33,7 @@ export default {
     push(item,tier,index){
       if (tier == 1 && item.hasChild == false) {
         this.$router.push({name:item.target});
+        this.close();
       }
     },    
     init() {
@@ -114,7 +115,7 @@ export default {
       width: 80%;
       margin: 0 auto;
       list-style: none;
-      padding: 8px 0;
+      padding: 8px 5px;
       cursor: pointer;
       display: inline-block;
       align-items: center;
@@ -122,6 +123,9 @@ export default {
       height: 100%;
       text-align: left;
       border-bottom: 0.5px solid #5a5858;
+    }
+    .active{
+      color: #009fe9;
     }
   }
 }

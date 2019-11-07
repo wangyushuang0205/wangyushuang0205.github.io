@@ -1,7 +1,7 @@
 <template>
   <div class="product_about">
     <div class="background">
-      <pcHeadline main="回回作品" subtitle="ABOUT PRODUCT" class="pc-headline"></pcHeadline>
+      <pcHeadline main="盛拓作品" subtitle="ABOUT PRODUCT" class="pc-headline"></pcHeadline>
       <div class="top_content">
         <div class="list">
           <div class="left_menu">

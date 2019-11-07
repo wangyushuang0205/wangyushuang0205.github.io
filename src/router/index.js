@@ -17,6 +17,7 @@ const mp_home         = () => import('@/components/index/mp/mp_home.vue');
 const mp_index        = () => import('@/components/index/mp/mp_index.vue');
 const mp_product      = () => import('@/components/index/mp/mp_product.vue');
 const mp_about        = () => import('@/components/index/mp/mp_about.vue');
+const mp_contact      = () => import('@/components/index/mp/mp_contact.vue');
 
 
 Vue.use(Router)
@@ -96,6 +97,14 @@ export default new Router({
           path: '/mp_about',
           component: mp_about,
           name: 'mp_about',
+          meta:{
+            type: 'mp',
+          }
+        },
+        {
+          path: '/mp_contact',
+          component: mp_contact,
+          name: 'mp_contact',
           meta:{
             type: 'mp',
           }

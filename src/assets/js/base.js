@@ -40,7 +40,7 @@ export default {
         {isShow: true,label:'首页',hasChild:false,target:'mp_index',type:'index'},
         {isShow: true,label:'照片欣赏',hasChild:false,target:'mp_product',type:'product'},
         {isShow: true,label:'关于我们',hasChild:false,target:'mp_about',type:'about'},
-        // {isShow: true,label:'联系我们',hasChild:false,target:'mp_contact',type:'contact'},
+        {isShow: true,label:'咨询',hasChild:false,target:'mp_contact',type:'contact'},
       ]
     },
     banner:{
@@ -48,5 +48,5 @@ export default {
       style:  1,   // 默认取样式 1 填充屏幕
     },
   },
-  copyright:'© 2019 青岛回回·摄影工作室 版权所有',
+  copyright:'© 2019 青岛盛拓工作室工作室 版权所有',
 }

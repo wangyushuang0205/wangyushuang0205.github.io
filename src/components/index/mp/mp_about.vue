@@ -17,7 +17,7 @@
       <div class="actor">
         <p class="actor_out">
           <van-image fit="fill" round width="10rem" height="10rem" src="https://ccdn.goodq.top/caches/9102962aafdbb7d6f228dc3afcdb2fb0/aHR0cHM6Ly81ZDE5YTg4MzE3Y2JmLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYWU5M2Y2MDA2NDgwN2Y3ZDk0MGM0ZWM4YzJmYWI1YjAuanBn.jpg"/>
-          <p>回回摄影工作室名片</p>
+          <p>盛拓工作室名片</p>
         </p>
       </div>
       <p class="introduce">{{company.introduce}}</p>

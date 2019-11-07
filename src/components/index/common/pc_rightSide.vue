@@ -36,7 +36,6 @@ export default {
 <style lang="less" scoped>
 .side {
   width: 200px;
-  height: 150px;
   position: fixed;
   top: 50%;
   right: 18px;

@@ -17,7 +17,7 @@
       </div>
       <div class="top-content-two">
         <div class="top-content-two-up">
-          <p>回回·摄影工作室简介</p>
+          <p>盛拓·摄影工作室简介</p>
           <p v-text="company.introduce" class="company-introduce"></p>
           <el-button plain @click="$router.push({name:'pc_about'})">MORE INFO</el-button>
         </div>
@@ -29,7 +29,7 @@
       </div>
       <div class="top-content-four">
         <div class="top-content-four-up">
-          <p>回回·摄影作品展</p>
+          <p>盛拓·摄影作品展</p>
           <p v-text="company.introduce" class="company-introduce"></p>
           <el-button plain @click="$router.push({name:'pc_contact'})">MORE PICTURES</el-button>
         </div>

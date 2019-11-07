@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Email</title>
+</head>
+<body>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){ 
+		　　	let height1    = $("#email").height();
+		　　	let height2    = $("#right-top").height();
+		    let height     = height1-height2-180;
+		    let lineHeight = height/5;
+			$("#contant").css('height',height);
+			$("#menu").css('line-height',lineHeight+'px');
+			// 自适应
+			$(window).resize(function() {
+			    var window_width  = $(window).width();//获取浏览器窗口宽度
+			    if(window_width < 9600){
+					$("#contant").css('height',height);
+					$("ul").css('height',height);
+					$("#menu").css('line-height',lineHeight+'px');
+			    }
+			});
+			// hover及点击事件
+			$(function () {
+	            $('li').mouseenter(function () {
+	                $(this).css({'background-color':'rgba(255, 255, 255, 0.2)','text-decoration':'none'}).siblings().css('opacity','1')})
+	            $('li').mouseleave(function () {
+	                $(this).css('background-color','transparent')
+	                }
+	            )
+	            $(".transmit").click(function(){
+				  console.log("1、触发转发事件");
+				});
+	            $(".collect").click(function(){
+				  console.log("2、触发收藏事件");
+				});
+	            $(".delete").click(function(){
+				  console.log("3、触发删除事件");
+				});
+	            $(".preview").click(function(){
+				  console.log("4、上一篇");
+				});
+	            $(".next").click(function(){
+				  console.log("5、下一篇");
+				});
+        	})
+		}); 
+	</script>
+	<div style="width: 100%;min-width: 900px;height: 100%;margin: 0 auto;position: fixed;z-index: -1;top: 0;left: 0;">
+		<!-- 背景图 -->
+    	<img src="http://www.leawo.cn/attachment/201501/15/1723875_142131238905v4.jpg" style="width: 100%;height: 100%;">
+    	<!-- 读取邮件 -->
+		<div id="email" style="width: 70%;min-width: 540px;height: 80%;margin: 0 auto;border-radius: 10px;position: fixed;top: 10%;left: 15%;background: rgba(255, 255, 255, 0.7);">
+			<!-- 左边菜单 -->
+			<div style="width: 18%;height: 100%;background: rgba(0,0,0,0.8);border-radius: 10px 0 0 10px;text-align: center;float: left;">
+				<img src="D:/www/boke-home/src/assets/img/email/emailogo.png" style="width: 80px; height: 80px;margin-top: 20%">
+				<p style="color: #fff;">收件箱</p>
+				<ul id="menu" style="padding-inline-start: 0;list-style: none; margin: 40% auto; color: #fff;text-align: center;border-top: 1px solid #545050;cursor: pointer;">
+					<li class="transmit">转发</li>
+					<li class="collect">收藏</li>
+					<li class="delete">删除</li>
+					<li>回复</li>
+					<li>返回</li>
+				</ul>
+			</div>
+			<!-- 右边内容 -->
+			<div style="width: 82%;float: left;">
+				<div style="width: 88%;margin: 0 auto;">
+					<!-- 头部显示发件人 -->
+					<div id="right-top" style="width: 100%;padding: 30px 0 10px 0;border-bottom: 1px solid #eee;display: flex;flex-direction: row;justify-content: space-between;align-items: flex-end;">
+						<div style="display: flex;flex-direction: column;justify-content: flex-start;align-items: flex-start;">
+							<img src="http://www.leawo.cn/attachment/201501/15/1723875_142131238905v4.jpg" style="width: 50px;height: 50px;border-radius: 50%;">
+							<p>发件人：发件人名称</p>
+						</div>
+						<div style="display: flex;flex-direction: column;justify-content: flex-start;align-items: flex-end;">
+							<p><i class="preview" style="margin-right: 20px;cursor: pointer;">< 上一篇</i> <i class="next" style="cursor: pointer;">下一篇 ></i></p>
+							<p>时间：2019-11-26 09:02:01（星期几）</p>
+						</div>
+					</div>
+					<!-- 正文 -->
+					<div>
+						<h4 style="width: 100%;text-align: center;">消息的标题</h4>
+						<p>尊敬的***用户：</p>
+						<div id="contant" style="position: relative;overflow: hidden;width: 100%;">
+							<div style="background:#fff;position: absolute;left: 0;right: -20px;top: 0;bottom: 0;overflow-x: hidden;overflow-y: scroll;padding: 20px;">
+								<div style="text-indent: 25px;border-bottom: 1px solid #eee;padding-bottom: 20px;">
+									<div>In order to receive the best answers to your questions please follow these simple guidelines.Be descriptive about your question or problem and be sure to include any errors. Single line topics will rarely receive answers and do not just post a screenshot.Provide examples of the code in question and use syntax highlighting.Breakdown the issue in your code and provide a link to an example that replicates it. Use JSFiddle, CodePen, JSBin, or CodeSandbox.Following these few steps will greatly improve your chances of getting a good quality answer to your issue. Remember, everyone is here to share ideas and to help out using their own free time. Making an effort to craft a well thought out topic pays tribute to this.为了得到你问题的最佳答案，请遵循以下简单的指导原则。描述你的问题，并确保包括任何错误。单行主题很少会收到答案，也不只是发布截图。提供有关代码的示例并使用语法突出显示。在您的代码中分解问题，并提供到复制它的示例的链接。使用JSFiddle、CodePen、JSBin或CodeSandbox。遵循这几个步骤将极大地提高您获得高质量的问题答案的机会。记住，每个人都是来分享想法和利用自己的空闲时间来帮忙的。努力构思一个经过深思熟虑的主题是对这一点的赞扬。
+									</div>
+								</div>
+								<!-- 如果有图片 -->
+								<img src="http://www.leawo.cn/attachment/201501/15/1723875_142131238905v4.jpg" style="width: 100%;height: auto;margin-top: 20px;">
+								<!-- 回复框 -->
+								<div>
+									<p>快捷回复：我也不知道要不要写</p>
+									<textarea style="width:100%;height:auto;"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

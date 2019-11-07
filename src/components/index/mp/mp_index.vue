@@ -4,13 +4,13 @@
     <div class="top-content"> 
       <img src="@/assets/img/banner/banner1.jpg" class="background">
       <div class="top-content-one">
-        <img class="front_image   ag_image animated fadeInUp" src="https://ccdn.goodq.top/caches/9ce322c55ebcc6ced70674e9e5b9d10b/aHR0cHM6Ly81NzE4MzY2NGEwNjIwLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvMjliNmFkZjViZDEzOWE5YTA1MjJkYTZjMjAyOTczZDUtMTk4eDEyNy5wbmc_p_p100_p_3D.png" alt="sdfdsfdsfd" description="" data-attach-id="9523" data-title="sdfdsfdsfd" title="" src-img="" style="">
+        <img class="front_image   ag_image" src="https://ccdn.goodq.top/caches/9ce322c55ebcc6ced70674e9e5b9d10b/aHR0cHM6Ly81NzE4MzY2NGEwNjIwLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvMjliNmFkZjViZDEzOWE5YTA1MjJkYTZjMjAyOTczZDUtMTk4eDEyNy5wbmc_p_p100_p_3D.png" alt="sdfdsfdsfd" description="" data-attach-id="9523" data-title="sdfdsfdsfd" title="" src-img="" style="">
       </div>
       <div class="top-content-two">
         <div class="top-content-two-up">
-          <p>回回·摄影工作室简介</p>
+          <p>盛拓·摄影工作室简介</p>
           <p v-text="company.introduce" class="company-introduce"></p>
-          <el-button plain @click="$router.push({name:'pc_about'})">MORE INFO</el-button>
+          <el-button plain @click="$router.push({name:'mp_about'})">MORE INFO</el-button>
         </div>
       </div>
       <div class="top-content-three">
@@ -20,7 +20,7 @@
       </div>
       <div class="top-content-four">
         <div class="top-content-four-up">
-          <p>回回·摄影作品展</p>
+          <p>盛拓·摄影作品展</p>
           <p v-text="company.introduce" class="company-introduce"></p>
           <el-button plain @click="$router.push({name:'mp_product'})">MORE PICTURES</el-button>
         </div>
@@ -28,7 +28,7 @@
       <mpBanner class="mp-banner"></mpBanner>
       <div class="top-content-five">
         <div class="top-content-five-up">
-          <p>回回·联系我们</p>
+          <p>盛拓·联系我们</p>
           <div v-if="company.wx_code">
             <van-image fit="cover" :src="company.wx_code"/>
           </div>
@@ -41,6 +41,9 @@
         </div>
       </div>
     </div>
+    <el-backtop target=".top-content" :visibility-height="300" :bottom="100">
+      <div class="up-container"><i class="el-icon-arrow-up"></i></div>
+    </el-backtop>
     <mpFooter ref="mpFooter" :props="{index:{isActive:'index'}}"></mpFooter>
   </div>
 </template>
@@ -78,11 +81,23 @@ export default {
         closeOnPopstate: true,//是否在页面回退时自动关闭
         onClose(){
           _self.imagesArr = [];
+          _self.$router.push({name:'mp_index'});
         }
       });
     },
   },
   mounted() {
+    $(document).ready(function() {
+    if (window.history && window.history.pushState) {
+      $(window).on('popstate', function () {
+        window.history.pushState('forward', null, '#');
+        window.history.forward(1);
+        console.log("我按返回键了");
+      });
+    }
+      window.history.pushState('forward', null, '#'); //在IE中必须得有这两行
+      window.history.forward(1);
+    });
     // $(function() {
     //   //menu的高度自适应
     //   let bannerH = $('.mp-banner').height();
@@ -281,6 +296,37 @@ export default {
               margin-bottom: 0;
             }
           }
+        }
+      }
+    }
+  }
+  .up-container {
+    height: 100%;
+    width: 100%;
+    border-radius: 10%;
+    background-color: #f2f5f6;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .12);
+    text-align: center;
+    line-height: 40px;
+    color: #1989fa;
+
+    .el-icon-arrow-up {
+      font-size: 20px;
+      font-weight: bolder;
+      position: relative;
+      animation: move 0.8s infinite;
+
+      @keyframes move {
+        0% {
+          bottom: 0px;
+        }
+
+        50% {
+          bottom: 4px;
+        }
+
+        100% {
+          bottom: 0px;
         }
       }
     }

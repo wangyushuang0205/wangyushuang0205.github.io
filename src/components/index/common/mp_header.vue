@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="index-header">
-      <span>这里是公司名称</span>
+      <span>盛拓·摄影工作室</span>
       <van-icon name="bars" @click="isShowSide = !isShowSide"/>
     </div>
     <van-popup class="side" v-model="isShowSide" position="right" :modal="false">
