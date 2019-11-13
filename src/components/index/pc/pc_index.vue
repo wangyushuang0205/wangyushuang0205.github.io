@@ -9,10 +9,10 @@
     <div class="top-content">
       <div class="top-content-one">
         <div class="top-content-one-float">
-          <div class="header-top animated fadeInUp">
+          <div class="header-top">
             <span v-text="company.name" class="company-name"></span>
           </div>
-          <img class="front_image   ag_image animated fadeInUp" src="https://ccdn.goodq.top/caches/9ce322c55ebcc6ced70674e9e5b9d10b/aHR0cHM6Ly81NzE4MzY2NGEwNjIwLnQ3NC5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDUvMjliNmFkZjViZDEzOWE5YTA1MjJkYTZjMjAyOTczZDUtMTk4eDEyNy5wbmc_p_p100_p_3D.png" alt="sdfdsfdsfd" description="" data-attach-id="9523" data-title="sdfdsfdsfd" title="" src-img="" style="">
+          <img src="@/assets/img/slicing/m6.svg">
         </div>
       </div>
       <div class="top-content-two">
@@ -80,24 +80,24 @@ export default {
       var h = document.body.clientHeight;
       $('.top-content-one').css('height',h);
       $('.top-content-one-float').css('height',h);
-      document.getElementById("con").addEventListener("scroll",function() {
-        var top = $(".con").scrollTop();
-        if (top > 100) {
-          $('.top-content-two-up').addClass('animated fadeInUp')
-        }
-        if (top > 400) {
-          $('.top-content-three').children().eq(0).addClass('animated fadeInUp')
-          setTimeout(function(){
-            $('.top-content-three').children().eq(1).addClass('animated fadeInUp')
-          }, 200);
-          setTimeout(function(){
-            $('.top-content-three').children().eq(2).addClass('animated fadeInUp')
-          }, 400);
-        }
-        if (top > 900) {
-          $('.top-content-four-up').addClass('animated fadeInUp')
-        }
-      },true);
+      // document.getElementById("con").addEventListener("scroll",function() {
+      //   var top = $(".con").scrollTop();
+      //   if (top > 100) {
+      //     $('.top-content-two-up').addClass('animated fadeInUp')
+      //   }
+      //   if (top > 400) {
+      //     $('.top-content-three').children().eq(0).addClass('animated fadeInUp')
+      //     setTimeout(function(){
+      //       $('.top-content-three').children().eq(1).addClass('animated fadeInUp')
+      //     }, 200);
+      //     setTimeout(function(){
+      //       $('.top-content-three').children().eq(2).addClass('animated fadeInUp')
+      //     }, 400);
+      //   }
+      //   if (top > 900) {
+      //     $('.top-content-four-up').addClass('animated fadeInUp')
+      //   }
+      // },true);
     });
   },
 }

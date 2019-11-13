@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import slicing from './slicing';   //切图板块
+
 
 
 
@@ -70,7 +72,8 @@ export default new Router({
           meta:{
             type: 'pc',
           }
-        }
+        },
+        slicing,
       ]
     },
     {

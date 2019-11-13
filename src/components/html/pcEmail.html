@@ -17,26 +17,68 @@
     var img2H         = $('#img2').height() + 20;//获取图片的长度
     var img3H         = $('#img3').height() + 20;
     var img4H         = $('#img4').height() + 20;
-	  $("#cover").css({'padding-top': '50px','padding-bottom': height2});
+	  $("#cover").css({'padding-top': '50px','padding-bottom': height2 + 'px'});
     // 图片自适应
-    $('#content1').css('height',img1H);
-    $('#content2').css('height',img2H);
-    $('#content3').css('height',img3H);
-    $('#content4').css('height',img4H);
+    $('#content1').css('height',img1H + 'px');
+    $('#content2').css('height',img2H + 'px');
+    $('#content3').css('height',img3H + 'px');
+    $('#content4').css('height',img4H + 'px');
 
     // 自适应
     $(window).resize(function() {
       if (window_height > height) {
         // 背景自适应
-		    $("#cover").css({'padding-top': '50px','padding-bottom': height2});
+		    $("#cover").css({'padding-top': '50px','padding-bottom': height2 + 'px'});
         // 图片自适应
-        $('#content1').css('height',img1H);
-        $('#content2').css('height',img2H);
-        $('#content3').css('height',img3H);
-        $('#content4').css('height',img4H);
+        $('#content1').css('height',img1H + 'px');
+        $('#content2').css('height',img2H + 'px');
+        $('#content3').css('height',img3H + 'px');
+        $('#content4').css('height',img4H + 'px');
       }
     });
   });
+  // 让图片根据浏览器变化而自动缩放，使用方法$('img').resizeimage();
+/*  (function($){
+    $.fn.resizeimage = function(){
+        var imgLoad = function (url, callback) {
+            var img = new Image();
+            img.src = url;
+            if (img.complete) {
+                callback(img.width, img.height);
+            } else {
+                img.onload = function () {
+                    callback(img.width, img.height);
+                    img.onload = null;
+                };
+            };
+        };
+        var original = {
+            width:$(window).width()
+        };
+        return this.each(function(i,dom){
+            var image = $(this);
+            imgLoad(image.attr('src'),function(){
+                var img = {
+                    width:image.width(),
+                    height:image.height()
+                },percentage=1;
+                if(img.width<original.width){
+                    percentage = 1;
+                }else{
+                    percentage = (original.width)/img.width;
+                }
+                image.width(img.w=img.width*percentage-30).height(img.h=img.height*percentage);
+                $(window).resize(function(){
+                    var w = $(this).width();
+                    percentage = w/img.width>1?1:w/img.width;
+                    var newWidth = img.width*percentage-30;
+                    var newHeight = img.height*percentage;
+                    image.width(newWidth).height(newHeight);
+                });
+            });
+        });
+    };
+})(jQuery);*/
   </script>
 <div style="width: 100%;min-width: 700px;">
     <!-- 背景图片，固定在下层 -->
@@ -57,6 +99,8 @@
     	</div>
 
     	<div id="content2" style="width: 77.44%;margin: 20px auto; padding: 20px 10px;border-top: 1px solid #ccc;">
+        <!-- https://c-ssl.duitang.com/uploads/item/201601/21/20160121203551_PLYXy.thumb.700_0.jpeg -->
+        <!-- http://www.leawo.cn/attachment/201501/15/1723875_142131238905v4.jpg -->
           <img id="img2" src="https://c-ssl.duitang.com/uploads/item/201601/21/20160121203551_PLYXy.thumb.700_0.jpeg" style="width: 30%;max-width: 350px;margin: 22px 0;float: right;padding-left: 20px">
           <p style="color: #fff;text-align: right;text-indent: 30px;line-height: 30px;font-size: 22px;margin-bottom: 20px;">这里是英文翻译</p>
           <p style="color: #fff;width: 100%;margin: 0 auto;font-size: 17px;color: #fff;text-indent: 30px;padding-bottom: 20px;line-height: 32px;text-align: justify;">In order to receive the best answers to your questions please follow these simple guidelines.Be descriptive about your question or problem and be sure to include any errors. Single line topics will rarely receive answers and do not just post a screenshot.Provide examples of the code in question and use syntax highlighting.Breakdown the issue in your code and provide a link to an example that replicates it. Use JSFiddle, CodePen, JSBin, or CodeSandbox.Following these few steps will greatly improve your chances of getting a good quality answer to your issue. Remember, everyone is here to share ideas and to help out using their own free time. Making an effort to craft a well thought out topic pays tribute to this.</p>

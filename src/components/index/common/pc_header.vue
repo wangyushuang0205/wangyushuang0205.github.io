@@ -3,7 +3,7 @@
     <div class="header-box">
       <div class="header-left animated bounceInLeft">
         <img v-if="company.logo" :src="company.logo" @click="$router.push({name:'pc_index'})">
-        <span v-else v-text="company.title" class="company-name"></span>
+        <span v-text="company.title" class="company-name"></span>
       </div>
       <div class="header-right animated bounceInRight">
         <ul>
@@ -72,6 +72,14 @@ export default {
     align-items: center;
 
     .header-left {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      img{
+        width: 50px;
+        margin-right: 20px;
+      }
       span {
         font-size: 32px;
         letter-spacing: 6px;

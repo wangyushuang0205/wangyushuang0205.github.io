@@ -1,6 +1,7 @@
 export default {
   // 公司基本信息
   title: '青岛盛拓工作室',
+  logo: require('@/assets/img/slicing/sw2.svg'),
   name:'I JUST WANNER RUN',
   introduce:'青岛盛拓工作室成立于2019年9月16日，盛拓服务小众，品质高端，主营业务为高端个人写真、儿童私人摄影、商业摄影、毕业摄影等。',
   contact:'王玉双',

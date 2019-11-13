@@ -7,6 +7,7 @@ export default {
       children:[
         {isShow: true,label:'首页',hasChild:false,target:'pc_index',type:'index'},
         {isShow: true,label:'照片欣赏',hasChild:false,target:'pc_product',type:'product'},
+        {isShow: true,label:'前端设计',hasChild:false,target:'slicingList',type:'slicing'},
         {isShow: true,label:'关于我们',hasChild:false,target:'pc_about',type:'about'},
         {isShow: true,label:'联系我们',hasChild:false,target:'pc_contact',type:'contact'},
       ]
@@ -20,6 +21,7 @@ export default {
       children:[
         {isShow: true,label:'> 首页',target:'pc_index'},
         {isShow: true,label:'> 照片欣赏',target:'pc_product'},
+        {isShow: true,label:'> 前端设计',target:'slicingList'},
         {isShow: true,label:'> 关于我们',target:'pc_about'},
         {isShow: true,label:'> 联系我们',target:'pc_contact'},
       ]
