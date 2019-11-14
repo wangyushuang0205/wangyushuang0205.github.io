@@ -2,6 +2,7 @@
 const slicingBox            = () => import('@/components/slicing/pc/slicingBox');
 const slicingList           = () => import('@/components/slicing/pc/slicingList'); 
 const slicingOne            = () => import('@/components/slicing/pc/slicingOne'); 
+const email1                = () => import('@/components/slicing/email/email1'); 
 
 
 
@@ -13,5 +14,6 @@ export default{
         //日志记录
         { path: 'slicingList', component: slicingList, name: 'slicingList', meta: { title: '切图列表' }},
         { path: 'slicingOne', component: slicingOne, name: 'slicingOne', meta: { title: '第一张切图' }},
+        { path: 'email1', component: email1, name: 'email1', meta: { title: '邮件模板' }},
     ]
 }
