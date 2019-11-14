@@ -1,10 +1,10 @@
 <template>
   <div class="slicing">
-    <pcHeadline main="前端页面切图" subtitle="WEB DESIGN" class="pc_headline"></pcHeadline>
+    <pcHeadline main="前端页面模板" subtitle="WEB DESIGN" class="pc_headline"></pcHeadline>
     <div class="slicing_menu">
       <ul>
         <span class="menu_title">模板分类</span>
-        <li v-if="item.isShow" v-for="(item,index) in menus" :key="index" @click="push(item,1,index)"  :class="$route.name == item.target ? 'active':''" class="first">
+        <li v-if="item.isShow" v-for="(item,index) in menus" :key="index" @click="push(item,1,index)" class="first">
           <span>{{item.label}}</span>
         </li>
       </ul>
@@ -12,8 +12,7 @@
     <div class="background">
       <div v-for="(item, index) in slicingList" :key="index" @click="$router.push({name:item.target})" class="card">
         <div class="img_inner"><img :src="item.url" class="qfypreloadimg"></div>
-        <p>{{item.title}}</p>
-
+        <p class="card_title">{{item.label}}--{{item.title}}</p>
       </div>
     </div>
   </div>
@@ -30,53 +29,77 @@ export default {
     return {
       isShow : false,
       menus  : [
-        {isShow: true,label:'推荐模板',hasChild:false,target:'slicingOne',type:'recommend'},
-        {isShow: true,label:'商业模板',hasChild:false,target:'slicingOne',type:'business'},
-        {isShow: true,label:'个人博客',hasChild:false,target:'slicingOne',type:'blog'},
-        {isShow: true,label:'公司/企业',hasChild:false,target:'slicingOne',type:'company'},
-        {isShow: true,label:'其他',hasChild:false,target:'slicingOne',type:'other'},
+        {index: 0, isShow: true,label:'推荐模板',hasChild:false,target:'slicingOne',type:'recommend'},
+        {index: 1, isShow: true,label:'商业模板',hasChild:false,target:'slicingOne',type:'business'},
+        {index: 2, isShow: true,label:'个人博客',hasChild:false,target:'slicingOne',type:'blog'},
+        {index: 3, isShow: true,label:'公司/企业',hasChild:false,target:'slicingOne',type:'company'},
+        {index: 4, isShow: true,label:'其他',hasChild:false,target:'slicingOne',type:'other'},
       ],
       color  : '',
       slicingList: [
         { 
-          title: '这是我的第1个切图', 
-          label: '个人博客',
-          url: 'https://timg.qifeiye.com/manual/54d4a4629fb6b380x280_1.png', 
-          target: 'slicingOne' 
+          title : '这是我的第1个切图', 
+          label : '个人博客',
+          type  : 'recommend',
+          url   : 'https://timg.qifeiye.com/manual/54d4a4629fb6b380x280_1.png', 
+          target: 'slicingOne',
         },
         { 
-          title: '这是我的第2个切图', 
-          label: '推荐模板',
-          url: 'https://timg.qifeiye.com/manual/5d53a6a19a67e380x280_1.png', 
-          target: 'slicingOne' 
+          title : '这是我的第2个切图', 
+          label : '推荐模板',
+          type  : 'recommend',
+          url   : 'https://timg.qifeiye.com/manual/5d53a6a19a67e380x280_1.png', 
+          target: 'slicingOne', 
         },
         { 
-          title: '这是我的第3个切图', 
-          label: '商业模板',
-          url: 'https://timg.qifeiye.com/manual/5d6cac958e71f380x280_1.png', 
-          target: 'slicingOne' 
+          title : '这是我的第3个切图', 
+          label : '商业模板',
+          type  : 'recommend',
+          url   : 'https://timg.qifeiye.com/manual/5d6cac958e71f380x280_1.png', 
+          target: 'slicingOne', 
         },
         { 
-          title: '这是我的第4个切图', 
-          label: '推荐模板',
-          url: 'https://timg.qifeiye.com/manual/5d6791348892b380x280_1.png', 
-          target: 'slicingOne' 
+          title : '这是我的第4个切图', 
+          label : '推荐模板',
+          type  : 'recommend',
+          url   : 'https://timg.qifeiye.com/manual/5d6791348892b380x280_1.png', 
+          target: 'slicingOne', 
       },
         { 
-          title: '这是我的第5个切图', 
-          label: '推荐模板',
-          url: 'https://timg.qifeiye.com/manual/5d8c6f506826a380x280_1.png', 
-          target: 'slicingOne' 
+          title : '这是我的第5个切图', 
+          label : '推荐模板',
+          type  : 'recommend',
+          url   : 'https://timg.qifeiye.com/manual/5d8c6f506826a380x280_1.png', 
+          target: 'slicingOne', 
       },
       ],
     }
   },
   methods: {
     push(item,tier,index){
-      if (tier == 1 && item.hasChild == false) {
+      if (item.hasChild == false) {
         this.$router.push({name:item.target});
-        this.close();
       }
+      // console.log(item.index);
+      // $(function(){
+      //   var bgCounter  = 0;
+      //   var bgList     = [];
+      //   var div = $('.form-box');
+      //   $.each(div, function() {
+      //     switch (item.index) {
+      //       case 0:
+      //          break;
+      //       case 1:
+      //          break;
+      //       case 2:
+      //          break;
+      //       case 3:
+      //          break;
+      //       case 4:
+      //          break;
+      //     } 
+      //   });
+      // });
     },    
     init() {
       if (this.base.mp.header.isShow) {
@@ -99,16 +122,6 @@ export default {
 
 </script>
 <style lang="less" scoped>
-@font-face {
-  font-family: 'webfont';
-  font-display: swap;
-  src: url('//at.alicdn.com/t/webfont_sdvsj49nn5d.eot'); /* IE9*/
-  src: url('//at.alicdn.com/t/webfont_sdvsj49nn5d.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('//at.alicdn.com/t/webfont_sdvsj49nn5d.woff2') format('woff2'),
-  url('//at.alicdn.com/t/webfont_sdvsj49nn5d.woff') format('woff'), /* chrome、firefox */
-  url('//at.alicdn.com/t/webfont_sdvsj49nn5d.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-  url('//at.alicdn.com/t/webfont_sdvsj49nn5d.svg#杨任东竹石体-Bold') format('svg'); /* iOS 4.1- */
-}
 @media screen and (min-width: 1445px){
   .card {
     width: 30%;
@@ -157,11 +170,11 @@ export default {
       .menu_title{
         font-size: 25px;
         padding: 20px auto;
+        margin: 20px auto;
       }
-
       .first {
         width: 80%;
-        margin: 0 auto;
+        margin: 10px auto;
         list-style: none;
         padding: 8px 10px;
         cursor: pointer;
@@ -169,9 +182,16 @@ export default {
         height: 100%;
         text-align: left;
         border-bottom: 0.5px solid #ccc;
-      }
-      .active{
-        color: #009fe9;
+        line-height: 50px;
+        span{
+          width: 100%;
+          display: inline-block;
+          &:hover{
+            color: #009fe9;
+            transform: translateX(30px); 
+            transition: all 0.25s linear 0s;
+          }
+        }
       }
     }
   }
@@ -184,9 +204,9 @@ export default {
       border: 1px solid #f1f1f1;
       display: inline-block;
       border: 1px solid rgba(229,229,229,1);
-      box-shadow: rgba(50, 50, 50, 0.26) 0px 0px 2px 0px; 
       transform: translateY(0px); 
-      transition: all 2s linear 0s;
+      transition: all 0.2s linear 0s;
+      cursor: pointer;
       .img_inner{
         overflow: hidden;
         height: 250px;
@@ -199,6 +219,13 @@ export default {
           transition: all 5.5s linear 0s;
         }
       }
+      .card_title{
+        padding: 20px 10px;
+        border-top: 1px solid #ccc;
+      }
+    }
+    .card:hover{
+      box-shadow: rgba(50, 50, 50, 0.26) 5px 5px 5px 0px; 
     }
   }
 }

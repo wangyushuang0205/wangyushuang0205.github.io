@@ -17,6 +17,7 @@ import animated from 'animate.css'
 import base from '@/assets/js/base.js'
 import company from '@/assets/js/company.js'
 import vueWaterfallEasy from 'vue-waterfall-easy'
+import './styles/index.less'
 Vue.prototype.company = company
 Vue.prototype.base = base
 
