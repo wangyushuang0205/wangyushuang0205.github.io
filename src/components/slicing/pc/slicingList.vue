@@ -11,7 +11,7 @@
     </div>
     <div class="background">
       <div v-for="(item, index) in slicingList" :key="index" @click="$router.push({name:item.target})" class="card">
-        <div class="img_inner"><img :src="item.url" class="qfypreloadimg"></div>
+        <div class="img_inner"><img :src="item.url" class="img_top"></div>
         <p class="card_title">{{item.label}}--{{item.title}}</p>
       </div>
     </div>
@@ -112,6 +112,11 @@ export default {
     $(document).ready(function(){
         let window_height  = $(".background").height();
         $(".slicing_menu").css('height', window_height);
+        var div = $('.img_top');
+        $.each(div, function(){
+
+          //这里写图片上下滚动
+        });
       $(window).resize(function() {
         let window_height  = $(".background").height();
         $(".slicing_menu").css('height', window_height);
