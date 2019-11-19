@@ -2,15 +2,15 @@
   <div class="slicing">
     <pcHeadline main="前端页面模板" subtitle="WEB DESIGN" class="pc_headline"></pcHeadline>
     <div class="slicing_menu">
-      <ul>
+      <ul v-show="isShow">
         <span class="menu_title">模板分类</span>
-        <li v-if="item.isShow" v-for="(item,index) in menus" :key="index" @click="push(item,1,index)" class="handle">
+        <li v-for="(item,index) in menus" :key="index" @click="push(item,1,index)" :class="active == index ?'handle-active':'handle'">
           <span>{{item.label}}</span>
         </li>
       </ul>
     </div>
     <div class="background">
-      <div v-for="(item, index) in slicingList" :key="index" @click="$router.push({name:item.target})" class="card hidden">
+      <div v-for="(item, index) in showData.slicingList" :key="index" @click="$router.push({name:item.target})" class="card hidden">
         <div class="img_inner"><img :src="item.url" class="img_top"></div>
         <p class="card_title">{{item.label}}--{{item.title}}</p>
       </div>
@@ -27,107 +27,203 @@ export default {
   },
   data() {
     return {
-      isShow : false,
-      menus  : [
-        {index: 0, isShow: true,label:'推荐模板',hasChild:false,target:'slicingOne',type:'recommend'},
-        {index: 1, isShow: true,label:'商业模板',hasChild:false,target:'slicingOne',type:'business'},
-        {index: 2, isShow: true,label:'个人博客',hasChild:false,target:'slicingOne',type:'blog'},
-        {index: 3, isShow: true,label:'公司/企业',hasChild:false,target:'slicingOne',type:'company'},
-        {index: 4, isShow: true,label:'其他',hasChild:false,target:'slicingOne',type:'other'},
-      ],
-      color  : '',
-      slicingList: [
-        { 
-          isShow: true,
-          title : '这是我的第1个切图', 
-          label : '个人博客',
-          type  : 'blog',
-          url   : 'https://timg.qifeiye.com/manual/54d4a4629fb6b380x280_1.png', 
-          target: 'email1',
+      isShow   : true,
+      active   : '',
+      color    : '',
+      showData : '',
+      menus    :[
+      // 推荐模板模块，三个模板
+        {
+          index  : 0,
+          isShow : true,
+          label  : '推荐模板',
+          slicingList : [
+            { 
+              index   : 0,
+              isShow  : true,
+              title   : '这是我的第1个推荐模板切图', 
+              label   : '推荐模板',
+              type    : 'recommend',
+              url     : 'https://timg.qifeiye.com/manual/5d53a6a19a67e380x280_1.png', 
+              target  : 'slicingOne', 
+            },{ 
+              index   : 1,
+              isShow  : true,
+              title   : '这是我的第2个推荐模板切图', 
+              label   : '推荐模板',
+              type    : 'recommend',
+              url     : 'https://timg.qifeiye.com/manual/5d6791348892b380x280_1.png', 
+              target  : 'slicingOne', 
+            },{ 
+              index   : 2,
+              isShow  : true,
+              title   : '这是我的第3个推荐模板切图', 
+              label   : '推荐模板',
+              type    : 'recommend',
+              url     : 'https://timg.qifeiye.com/manual/5d8c6f506826a380x280_1.png', 
+              target  : 'slicingOne', 
+            },{ 
+              index   : 3, 
+              isShow  : true, 
+              title   : '这是我的第1个切图',
+              label   : '推荐模板',
+              type    : 'recommend',
+              url     : 'https://timg.qifeiye.com/manual/54d4a4629fb6b380x280_1.png', 
+              target  : 'email1',
+            },
+          ],
         },
-        { 
-          isShow: true,
-          title : '这是我的第2个切图', 
-          label : '推荐模板',
-          type  : 'recommend',
-          url   : 'https://timg.qifeiye.com/manual/5d53a6a19a67e380x280_1.png', 
-          target: 'slicingOne', 
+      // 个人博客模块，一个模板
+        {
+          index  : 1,
+          isShow : true,
+          label  : '个人博客',
+          slicingList : [
+            { 
+              index   : 0, 
+              isShow  : true, 
+              title   : '这是我的第1个切图',
+              label   : '个人博客',
+              type    : 'blog',
+              url     : 'https://timg.qifeiye.com/manual/54d4a4629fb6b380x280_1.png', 
+              target  : 'email1',
+            },
+          ],
         },
-        { 
-          isShow: true,
-          title : '这是我的第3个切图', 
-          label : '商业模板',
-          type  : 'business',
-          url   : 'https://timg.qifeiye.com/manual/5d6cac958e71f380x280_1.png', 
-          target: 'slicingOne', 
+      // 商业模板模块，一个模板
+        {
+          index  : 2,
+          isShow : true,
+          label  : '商业模板',
+          slicingList : [
+            { 
+              index   : 0, 
+              isShow  : true, 
+              title   : '这是我的第1个商业模板切图',
+              label   : '商业模板',
+              type    : 'business',
+              url     : 'https://timg.qifeiye.com/manual/5d6cac958e71f380x280_1.png', 
+              target  : 'email1',
+            },
+          ],
         },
-        { 
-          isShow: true,
-          title : '这是我的第4个切图', 
-          label : '推荐模板',
-          type  : 'recommend',
-          url   : 'https://timg.qifeiye.com/manual/5d6791348892b380x280_1.png', 
-          target: 'slicingOne', 
+      // 公司/企业模块，暂无案例
+        {
+          index  : 3,
+          isShow : true,
+          label  : '公司/企业',
+          slicingList : [
+            { 
+              index   : 0, 
+              isShow  : true, 
+              title   : '这是我的第1个公司/企业切图',
+              label   : '公司/企业',
+              type    : 'company',
+              url     : 'https://timg.qifeiye.com/manual/5d6cac958e71f380x280_1.png', 
+              target  : 'email1',
+            },
+          ],
         },
-        { 
-          isShow: true,
-          title : '这是我的第5个切图', 
-          label : '推荐模板',
-          type  : 'recommend',
-          url   : 'https://timg.qifeiye.com/manual/5d8c6f506826a380x280_1.png', 
-          target: 'slicingOne', 
+      // 其他模块，暂无案例
+        {
+          index  : 4,
+          isShow : true,
+          label  : '其他',
+          slicingList : [
+            { 
+              index   : 0, 
+              isShow  : true, 
+              title   : '这是我的第1个其他切图',
+              label   : '其他',
+              type    : 'other',
+              url     : 'https://timg.qifeiye.com/manual/5d6cac958e71f380x280_1.png', 
+              target  : 'email1',
+            },
+          ],
         },
       ],
     }
   },
   methods: {
     push(item,tier,index){
-      // if (item.hasChild == false) {
-      //   this.$router.push({name:item.target});
-      // }
-      // console.log(item.type,tier,index);
-      $(".card").eq(0).addClass("blog");
-      $(".card").eq(1).addClass("recommend");
-      $(".card").eq(2).addClass("business");
-      $(".card").eq(3).addClass("recommend");
-      $(".card").eq(4).addClass("recommend");
-      if($(".card").is(".blog")){
-        $(".blog").removeClass("hidden");
-      }else{
-        $(".hidden1").hide();
+      if (item) {
+        this.showData = item;
+        this.active   = item.index;
+        $(document).ready(function(){
+          //这里是图片上下滚动
+          var div = $('.img_top');
+          $.each(div, function(){
+            console.log(div);
+            let img_height   = $(this).height();
+            let img_inner    = $(".img_inner").height();
+            let moveY        = img_height-img_inner;
+            let y1 = 'translateY' + '(' + (-moveY) + 'px' + ')';
+            let y2 = 'translateY' + '(' + 0 + 'px' + ')';
+            $(this).mouseover(function () {
+              console.log(-moveY,"鼠标移入");
+              $(this).css({
+                'transform': y1, 
+                'transition':'all 5.5s linear 0s',
+                'bottom': y1,
+              });
+            }).mouseout(function () {
+              console.log(moveY,"鼠标移出");
+              $(this).css({
+                'transform': y2, 
+                'transition':'all 1.5s linear 0s'
+              });
+            });
+          });
+        });
       }
-      if($(".card").is(".recommend")){
-        $(".recommend").removeClass("hidden");
-        $(".hidden").hide();
+    },   
+  },
+  mounted() {
+    this.showData = this.menus[0];
+    console.log(this.menus[0]);
+    console.log(this.active);
+    this.active   = 0;
+    $(document).ready(function(){
+      // 自动刷新一次
+      if(location.href.indexOf("#reloaded") == -1){
+        location.href = location.href + "#reloaded";
+        location.reload();
       }
-      if($(".card").is(".business")){
-        $(".business").removeClass("hidden");
-        $(".hidden").hide();
-      }
-      // $(function(){
-      //   var bgCounter  = 0;
-      //   var bgList     = [];
-      //   var div = $('.form-box');
-      //   $.each(div, function() {
-      //     switch (item.index) {
-      //       case 0:
-      //          break;
-      //       case 1:
-      //          break;
-      //       case 2:
-      //          break;
-      //       case 3:
-      //          break;
-      //       case 4:
-      //          break;
-      //     } 
-      //   });
-      // });
-    },    
-    init() {
       //这里是图片上下滚动
-      // let window_width  = $(window).width();
-      // if (window_width < 9999) {
+      var div = $('.img_top');
+      $.each(div, function(){
+        console.log(div);
+        let img_height   = $(this).height();
+        let img_inner    = $(".img_inner").height();
+        let moveY        = img_height-img_inner;
+        let y1 = 'translateY' + '(' + (-moveY) + 'px' + ')';
+        let y2 = 'translateY' + '(' + 0 + 'px' + ')';
+        $(this).mouseover(function () {
+          // console.log(-moveY,"鼠标移入");
+          $(this).css({
+            'transform': y1, 
+            'transition':'all 5.5s linear 0s',
+            'bottom': y1,
+          });
+        }).mouseout(function () {
+          // console.log(moveY,"鼠标移出");
+          $(this).css({
+            'transform': y2, 
+            'transition':'all 1.5s linear 0s'
+          });
+        });
+      });
+
+      let window_height  = $(".background").height()+20; 
+      if (window_height > 300) {
+        $(".slicing_menu").css('height', window_height);
+      } 
+      $(window).resize(function() {
+        if (window_height > 300) {
+          $(".slicing_menu").css('height', window_height);
+        }
+
+        //这里是图片上下滚动
         var div = $('.img_top');
         $.each(div, function(){
           let img_height   = $(this).height();
@@ -139,7 +235,8 @@ export default {
             // console.log(-moveY,"鼠标移入");
             $(this).css({
               'transform': y1, 
-              'transition':'all 3.5s linear 0s'
+              'transition':'all 5.5s linear 0s',
+              'bottom': y1,
             });
           }).mouseout(function () {
             // console.log(moveY,"鼠标移出");
@@ -148,18 +245,7 @@ export default {
               'transition':'all 1.5s linear 0s'
             });
           });
-        });
-      // }
-    },
-  },
-  mounted() {
-    this.init();
-    $(document).ready(function(){
-      let window_height  = $(".background").height();
-      $(".slicing_menu").css('height', window_height);
-      $(window).resize(function() {
-        let window_height  = $(".background").height();
-        $(".slicing_menu").css('height', window_height);
+        }); 
       });
     })
   }
@@ -225,17 +311,34 @@ export default {
         cursor: pointer;
         display: inline-block;
         height: 100%;
-        text-align: left;
-        border-bottom: 0.5px solid #ccc;
+        text-align: center;
         line-height: 50px;
         span{
           width: 100%;
           display: inline-block;
-          &:hover{
-            color: #009fe9;
-            transform: translateX(30px); 
-            transition: all 0.25s linear 0s;
-          }
+          border: 1px solid #ccc;
+        }
+      }
+      .handle-active {
+        width: 80%;
+        margin: 10px auto;
+        list-style: none;
+        padding: 8px 10px;
+        cursor: pointer;
+        display: inline-block;
+        height: 100%;
+        text-align: center;
+        line-height: 50px;
+
+        span{
+          width: 100%;
+          display: inline-block;
+          border: 1px solid #ccc;
+          color: #fff;
+          background: #95d5ec;
+          box-shadow: rgba(50, 50, 50, 0.26) 3px 3px 3px 0px; 
+          transform: translate(-5px,-5px); 
+          transition: all 0.2s linear 0s;
         }
       }
     }
@@ -255,7 +358,6 @@ export default {
       .img_inner{
         overflow: hidden;
         height: 250px;
-        position: relative; 
         img{
           position: relative;
           width: 100%;
